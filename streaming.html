@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmShop - Plateforme de Streaming | Portfolio Baptiste Nuytten</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/streaming.css">
+</head>
+<body>
+    <a href="index.html" class="return-link">← Retour au portfolio</a>
+    
+    <div class="project-page">
+        <div class="project-header-banner">
+            <h1>FilmShop</h1>
+            <p>Plateforme de streaming avec système d'achat, API TMDB et base de données MySQL</p>
+        </div>
+        
+        <div class="container">
+            <section class="project-intro" style="margin-top: 2rem;">
+                <h2>Présentation du projet</h2>
+                <p>FilmShop est une plateforme de streaming complète qui permet aux utilisateurs de parcourir un catalogue de films, 
+                d'acheter ceux qui les intéressent et de les visionner directement en ligne. Le projet intègre l'API TMDB (The Movie Database) 
+                pour récupérer les informations des films (titres, descriptions, affiches, etc.) et les stocke dans une base de données MySQL.</p>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">API TMDB</span>
+                    <span class="tech-tag">Docker</span>
+                </div>
+                
+                <div class="project-code-link" style="text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
+                    <a href="#" class="btn" target="_blank">Voir le code source sur GitHub</a>
+                </div>
+            </section>
+            
+            <section class="screenshots">
+                <h2>Fonctionnalités du site</h2>
+                <div class="screenshot-container">
+                    <!-- Ligne 1 : Flux de démarrage -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/Acceuil.png" alt="Page d'accueil FilmShop" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Catalogue de films</h3>
+                            <p class="screenshot-desc">La page d'accueil présente un catalogue des films populaires disponibles à l'achat. Chaque film affiche son titre, son affiche et son prix. Les utilisateurs peuvent filtrer les films par catégorie et utiliser la barre de recherche pour trouver des films spécifiques par titre ou réalisateur.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/register.png" alt="Création de compte" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Création de compte</h3>
+                            <p class="screenshot-desc">Interface d'inscription permettant aux nouveaux utilisateurs de créer un compte en fournissant un nom d'utilisateur, une adresse e-mail et un mot de passe sécurisé. Le système vérifie l'unicité des identifiants et la conformité des mots de passe.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/login.png" alt="Page de connexion" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Système d'authentification</h3>
+                            <p class="screenshot-desc">Les utilisateurs peuvent se connecter à leur compte existant. L'authentification sécurisée permet d'accéder à la bibliothèque personnelle de films achetés et aux fonctionnalités de gestion du profil.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ligne 2 : Flux d'achat -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/Panier.png" alt="Panier d'achat" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Panier d'achat</h3>
+                            <p class="screenshot-desc">Interface du panier permettant de gérer les films sélectionnés avant l'achat. Les utilisateurs peuvent ajuster les quantités, supprimer des articles ou continuer leurs achats avant de passer à la caisse pour finaliser leur commande.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/Finishorder.png" alt="Page de paiement" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Système de paiement</h3>
+                            <p class="screenshot-desc">Interface de paiement pour finaliser l'achat des films sélectionnés. Le système calcule automatiquement le total avec TVA et accepte différents moyens de paiement (cartes de crédit, PayPal). Cette simulation de paiement permet d'ajouter les films achetés à la bibliothèque de l'utilisateur.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/Myorder.png" alt="Historique des commandes" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Gestion des commandes</h3>
+                            <p class="screenshot-desc">Les utilisateurs peuvent consulter l'historique de leurs commandes avec les détails de chaque achat : date, nombre d'articles, montant total. Le système inclut un programme de fidélité qui offre des avantages comme l'accès à des offres spéciales et des notifications personnalisées de nouveautés.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ligne 3 : Bibliothèque et admin -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/library.png" alt="Bibliothèque de films" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Bibliothèque personnelle</h3>
+                            <p class="screenshot-desc">Après l'achat, les films sont ajoutés à la bibliothèque personnelle de l'utilisateur. La bibliothèque affiche tous les films achetés avec des options pour les regarder directement en ligne ou accéder aux détails complets. Les films peuvent être filtrés par genre ou triés par titre.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/showfilm.png" alt="Lecteur vidéo" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Lecture de films</h3>
+                            <p class="screenshot-desc">Lecteur vidéo intégré permettant de visionner les films achetés directement dans le navigateur. L'interface de lecture affiche une bande-annonce ou un extrait du film avec des sous-titres. Dans une version complète, le lecteur inclurait des fonctionnalités de lecture en streaming avec différentes qualités vidéo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="screenshot-card">
+                        <img src="assets/img/streaming/Addfilmtodb.png" alt="Importation de films depuis TMDB" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Importation de films (Admin)</h3>
+                            <p class="screenshot-desc">Interface d'administration permettant d'importer automatiquement les films récents depuis l'API TMDB. Le système récupère le titre, la date de sortie, le synopsis, l'affiche, le réalisateur et les acteurs principaux. L'importation se fait en arrière-plan, permettant à l'administrateur de continuer à utiliser le site pendant ce temps.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="features" style="margin-top: 3rem;">
+                <h2>Fonctionnalités principales</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <h3 class="feature-title">Catalogue de films</h3>
+                        <p class="feature-desc">Exploration et recherche dans une vaste collection de films avec filtrage par genre.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">Comptes utilisateurs</h3>
+                        <p class="feature-desc">Système d'inscription et de connexion sécurisé pour gérer les achats et accéder à la bibliothèque personnelle.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">Panier d'achat</h3>
+                        <p class="feature-desc">Sélection et gestion des films avant l'achat avec calcul automatique du total.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">Système de paiement</h3>
+                        <p class="feature-desc">Simulation de paiement sécurisé avec différentes méthodes acceptées et calcul de TVA.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">Bibliothèque personnelle</h3>
+                        <p class="feature-desc">Accès aux films achetés avec options de visionnage direct et informations détaillées.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">Intégration TMDB</h3>
+                        <p class="feature-desc">Importation automatique des derniers films avec toutes leurs métadonnées depuis l'API TMDB.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">Panneau d'administration</h3>
+                        <p class="feature-desc">Interface dédiée aux administrateurs pour gérer le catalogue et importer de nouveaux films.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">Programme de fidélité</h3>
+                        <p class="feature-desc">Système de récompenses pour les clients réguliers avec avantages progressifs.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="technical" style="margin-top: 3rem;">
+                <h2>Aspects techniques</h2>
+                <p>Ce projet a été développé en utilisant plusieurs technologies et concepts avancés :</p>
+                <ul>
+                    <li><strong>Base de données relationnelle</strong> - Stockage des films, utilisateurs et commandes dans MySQL avec schéma optimisé</li>
+                    <li><strong>API REST</strong> - Intégration de l'API TMDB pour récupérer les données des films les plus récents</li>
+                    <li><strong>Authentification sécurisée</strong> - Protection des mots de passe et gestion des sessions utilisateurs</li>
+                    <li><strong>Interface responsive</strong> - Design adaptatif pour une expérience utilisateur optimale sur tous les appareils</li>
+                    <li><strong>Traitement asynchrone</strong> - Importation des films en arrière-plan sans bloquer l'interface utilisateur</li>
+                    <li><strong>Conteneurisation</strong> - Utilisation de Docker pour faciliter le déploiement et la portabilité</li>
+                </ul>
+            </section>
+            
+            <section class="challenges" style="margin-top: 3rem;">
+                <h2>Défis et solutions</h2>
+                <p>Lors du développement de ce projet, plusieurs défis techniques ont été relevés :</p>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Intégration de l'API TMDB</h3>
+                    <p class="feature-desc">L'API TMDB retourne des données complexes qui ont nécessité un traitement spécifique pour les adapter à notre structure de base de données. J'ai développé un système de mapping qui transforme les réponses JSON en objets compatibles avec notre schéma.</p>
+                </div>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Gestion des utilisateurs et sécurité</h3>
+                    <p class="feature-desc">La sécurisation des comptes utilisateurs a été une priorité. J'ai implémenté un système d'authentification robuste avec hachage des mots de passe, protection contre les injections SQL et gestion sécurisée des sessions.</p>
+                </div>
+            </section>
+        </div>
+        
+        <div class="credits">
+            <p>Développé par Baptiste Nuytten | Projet éducatif utilisant l'API TMDB</p>
+        </div>
+    </div>
+</body>
+</html>

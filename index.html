@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Baptiste Nuytten</title>
+    <link rel="stylesheet" href="assets/css/style.css">        
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">MonPortfolio</div>
+                <div class="nav-links">
+                    <a href="#about">À propos</a>
+                    <a href="#skills">Compétences</a>
+                    <a href="#projects">Projets</a>
+                    <a href="#experience">Expérience</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Bonjour, je suis <span class="highlight">Baptiste Nuytten</span></h1>
+                    <p class="subtitle">Étudiant en première année à Supinfo Caen</p>
+                    <div>
+                        <a href="#projects" class="btn">Voir mes projets</a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/img/baptiste.png" alt="Photo de profil" class="avatar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>À propos de moi</h2>
+            <p class="section-subtitle">Étudiant passionné d'informatique avec un sens aigu du détail et une grande curiosité technique.</p>
+            
+            <div class="about-content">
+                <p>Je suis Baptiste Nuytten, étudiant en première année à Supinfo Caen, école des experts métiers de l'informatique. Passionné par le développement informatique, je suis actuellement à la recherche d'un stage pour mettre en pratique mes compétences et enrichir mon expérience professionnelle.</p>
+                <p>Titulaire d'un BAC STI2D option SIN (Systèmes d'Information et Numérique), j'ai développé une solide base de connaissances techniques que j'enrichis quotidiennement à travers mes études et mes projets personnels.</p>
+                <p>En dehors de mes études, je m'intéresse à l'électronique (Arduino, Raspberry Pi), aux sports mécaniques (quads et motos) et j'aime explorer de nouvelles technologies pour développer mes compétences.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Mes compétences</h2>
+            <p class="section-subtitle">Un ensemble de compétences techniques que j'ai développées durant cette première année.</p>
+            
+            <div class="skills">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Git</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Mes projets</h2>
+            <p class="section-subtitle">Une sélection de projets personnels et professionnels que j'ai développés.</p>
+            
+            <div class="projects">
+                <div class="project-card">
+                    <img src="assets/img/Strategium.png" alt="Projet 1" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Jeu de plateau Strategium</h3>
+                        <p>Deux joueurs s'affrontent pour capturer les pièces adverses sur un plateau dynamique. Le jeu mélange des règles inspirées des échecs ♟️ avec une mécanique unique de capture.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Tkinter</span>
+                            <span class="project-tag">Pygame</span>
+                            <span class="project-tag">Git</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="strategium-demo.html" class="project-link">Demo</a>
+                            <a href="https://github.com/Darkft28/Strategium" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="assets/img/Supemon.png" alt="Projet 2" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Jeu Pokémon en CLI</h3>
+                        <p>Un jeu Pokémon fonctionnel développé en C, intégrant un système de sauvegarde, de capture, de gain d'expérience et de gestion des attaques. Ce projet met en œuvre des mécaniques de jeu captivantes pour une expérience immersive.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C</span>
+                            <span class="project-tag">Git</span>
+                            <span class="project-tag">Makefile</span>
+                            <span class="project-tag">CLI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="supemon.html" class="project-link">Demo</a>
+                            <a href="https://github.com/Darkft28/Supemon" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="assets/img/FilmShop.png" alt="Projet 3" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Site de streaming</h3>
+                        <p>Un site de streaming permettant l'inscription, la connexion, l'ajout au panier et la récupération des films depuis l'API TMDB pour les stocker dans une base de données MySQL, gérée via phpMyAdmin.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Git</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="streaming.html" class="project-link">Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Mon parcours</h2>
+            <p class="section-subtitle">Mon expérience professionnelle et académique.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2029</div>
+                        <h3>Formation Supinfo</h3>
+                        <p>SUPINFO Caen</p>
+                        <p>Première année à SUPINFO, école des experts métiers de l'informatique membre du Groupe IONIS. Formation complète en développement et système d'information.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Juillet - Août 2024</div>
+                        <h3>Saisonnier agricole</h3>
+                        <p>Sévépi 27 - Etrepagny</p>
+                        <p>Silo de céréales, réception et contrôles des céréales.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3>Récolte céréalière</h3>
+                        <p>27 - Puchay</p>
+                        <p>Août 2023 : Ferme Familiale<br>Juin 2023 : Exploitation de Rhubarbe<br>Août 2022 : Ferme Familiale<br>Juin 2022 : Exploitation de Rhubarbe</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - 2024</div>
+                        <h3>BAC STI2D - SIN</h3>
+                        <p>Lycée Delamare Deboutteville - Forges-les-Eaux</p>
+                        <p>Spécialisation en Systèmes d'Information et Numérique.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Décembre 2020</div>
+                        <h3>Stage de découverte 3ème</h3>
+                        <p>SYRACOM (76 - Eslettes)</p>
+                        <p>Découverte du modélisme et de la radio-communication.</p>
+                    </div>
+                </div>           
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez-moi</h2>
+            <p class="section-subtitle">N'hésitez pas à me contacter pour discuter de projets ou d'opportunités professionnelles.</p>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" placeholder="Votre nom">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Votre email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Votre message"></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Envoyer</button>
+            </div>
+            
+            <div class="social">
+                <a href="https://github.com/Darkft28" title="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/baptiste-nuytten-dhdi/" title="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Baptiste Nuytten. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

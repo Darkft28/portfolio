@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategium - Démonstration | Portfolio Baptiste Nuytten</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/strategium.css">
+    <style>
+        /* Reset du margin et padding pour éviter les espaces blancs */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Styles spécifiques à la page démo */
+        .return-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        
+        .return-link:hover {
+            background-color: var(--accent);
+        }
+        
+        .game-page {
+            min-height: 100vh;
+            background-color: var(--light);
+            margin-top: 0; /* Supprime les marges en haut */
+            padding-top: 0; /* Supprime le padding en haut */
+        }
+        
+        .game-header-banner {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            margin: 0; /* Supprime les marges */
+            margin-bottom: 2rem;
+        }
+        
+        .game-header-banner h1 {
+            color: white;
+            margin-bottom: 1rem;
+            padding-top: 1rem; /* Ajoute un peu d'espace en haut du titre */
+        }
+        
+        .game-header-banner p {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .credits {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        /* Assurez-vous que les conteneurs s'adaptent bien */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="return-link">← Retour au portfolio</a>
+    
+    <div class="game-page">
+        <div class="game-header-banner">
+            <h1>Strategium</h1>
+            <p>Un jeu de plateau stratégique inspiré des échecs, développé en Python et adapté pour le web</p>
+        </div>
+        
+        <div class="container">
+            <div id="startContainer" class="start-container">
+                <h3 class="game-title">Jouer à Strategium</h3>
+                <p class="game-subtitle">Affrontez un adversaire sur un plateau dynamique avec une mécanique unique de capture</p>
+                
+                <div class="size-selection">
+                    <label for="sizeSelector">Taille du plateau :</label>
+                    <select id="sizeSelector">
+                        <option value="4">4x4</option>
+                        <option value="6">6x6</option>
+                        <option value="8" selected>8x8</option>
+                        <option value="10">10x10</option>
+                        <option value="12">12x12</option>
+                    </select>
+                </div>
+                
+                <div class="game-controls">
+                    <button id="rulesButton" class="button secondary-button">Règles du jeu</button>
+                    <button id="startButton" class="button primary-button">Commencer la partie</button>
+                </div>
+                
+                <p class="credit-note" style="margin-top: 2rem; font-size: 0.9rem; color: #64748b;">
+                    Note : Cette version web a été adaptée par une IA à partir de mon code Python original.
+                </p>
+            </div>
+            
+            <div id="gameContainer" class="game-container">
+                <div class="game-header">
+                    <div id="playerLabel" class="player-info">Joueur 1</div>
+                    <button id="resetButton" class="button secondary-button">Réinitialiser</button>
+                </div>
+                
+                <div class="game-canvas-container">
+                    <canvas id="gameCanvas" width="600" height="600"></canvas>
+                </div>
+                
+                <div class="game-explanation" style="margin-top: 1.5rem;">
+                    <h3>Comment jouer :</h3>
+                    <p>1. Cliquez sur une de vos pièces pour la sélectionner (bleu pour joueur 1, rouge pour joueur 2).</p>
+                    <p>2. Les mouvements possibles seront mis en évidence en bleu clair.</p>
+                    <p>3. Cliquez sur une case valide pour déplacer votre pièce.</p>
+                    <p>4. Utilisez vos tours pour capturer les pions adverses en formant des rectangles avec votre reine.</p>
+                </div>
+            </div>
+            
+            <!-- Modal des règles -->
+            <div id="rulesModal" class="modal">
+                <div class="modal-content">
+                    <button id="closeRules" class="close-button">&times;</button>
+                    <h2 class="modal-title">Règles du jeu Strategium</h2>
+                    <ul class="rules-list">
+                        <li><strong>Objectif :</strong> Capturer toutes les pièces adverses jusqu'à ce qu'il n'en reste qu'une ou moins.</li>
+                        <li><strong>Plateau :</strong> Le jeu se joue sur un plateau carré de taille variable (4x4 à 12x12).</li>
+                        <li><strong>Pièces :</strong> Chaque joueur possède une reine (pièce forte) et plusieurs pions (pièces ordinaires).</li>
+                        <li><strong>Déplacements :</strong>
+                            <ul>
+                                <li>La reine peut se déplacer en ligne droite ou en diagonale, comme la dame aux échecs.</li>
+                                <li>Les pions peuvent se déplacer en ligne droite (horizontalement ou verticalement), comme la tour aux échecs.</li>
+                                <li>Les pièces ne peuvent pas sauter par-dessus d'autres pièces.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Capture par rectangle :</strong> 
+                            <ul>
+                                <li>Si un de vos pions n'est ni sur la même ligne ni sur la même colonne que votre reine, ils forment deux coins d'un rectangle.</li>
+                                <li>Si des pions adverses se trouvent aux autres coins de ce rectangle, ils sont automatiquement capturés.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tour par tour :</strong> Les joueurs jouent à tour de rôle, en déplaçant une seule pièce par tour.</li>
+                        <li><strong>Victoire :</strong> Le premier joueur qui réduit l'adversaire à une pièce ou moins remporte la partie.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Modal fin de jeu -->
+            <div id="gameOverModal" class="modal">
+                <div class="modal-content">
+                    <button id="closeModal" class="close-button">&times;</button>
+                    <div class="game-over-message">
+                        <h2 class="modal-title">Partie terminée !</h2>
+                        <p class="winner-text">Le Joueur <span id="winner"></span> a gagné !</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="playAgain" class="button primary-button">Rejouer</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-code-link" style="text-align: center; margin-top: 2rem;">
+                <a href="https://github.com/Darkft28/Strategium" class="btn" target="_blank">Voir le code source sur GitHub</a>
+            </div>
+            
+            <div class="game-details" style="margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h3>À propos du jeu</h3>
+                <p>Strategium est un jeu de plateau stratégique que j'ai développé en Python avec la bibliothèque Tkinter. Le concept du jeu combine des éléments d'échecs avec une mécanique de capture unique basée sur la formation de rectangles.</p>
+                
+                <h3>Développement</h3>
+                <p>Le développement de ce jeu m'a permis d'appliquer plusieurs concepts de programmation :</p>
+                <ul>
+                    <li>Programmation orientée objet en Python</li>
+                    <li>Gestion d'interfaces graphiques avec Tkinter</li>
+                    <li>Conception d'algorithmes pour les mouvements et captures</li>
+                    <li>Mise en œuvre de tests pour garantir le bon fonctionnement du jeu</li>
+                </ul>
+                
+                <h3>Version web</h3>
+                <p>Cette version web du jeu a été adaptée à partir de mon code Python original pour permettre aux visiteurs de mon portfolio de tester le jeu directement dans leur navigateur sans avoir à installer Python.</p>
+            </div>
+        </div>
+        
+        <div class="credits">
+            <p>Développé par Baptiste Nuytten | Version web adaptée par IA à partir du code Python original</p>
+        </div>
+    </div>
+
+    <script src="assets/js/strategium.js"></script>
+</body>
+</html>
