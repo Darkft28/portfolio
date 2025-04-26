@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Baptiste Nuytten</title>
-    <link rel="stylesheet" href="assets/css/style.css">        
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
             <nav>
                 <div class="logo">MonPortfolio</div>
-                <div class="nav-links">
-                    <a href="#about">À propos</a>
-                    <a href="#skills">Compétences</a>
-                    <a href="#projects">Projets</a>
-                    <a href="#experience">Expérience</a>
-                    <a href="#contact">Contact</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
+                <ul class="nav-links">
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#experience">Expérience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -28,7 +34,7 @@
                 <div class="hero-text">
                     <h1>Bonjour, je suis <span class="highlight">Baptiste Nuytten</span></h1>
                     <p class="subtitle">Étudiant en première année à Supinfo Caen</p>
-                    <div>
+                    <div class="hero-buttons">
                         <a href="#projects" class="btn">Voir mes projets</a>
                         <a href="#contact" class="btn btn-secondary">Me contacter</a>
                     </div>
@@ -109,7 +115,7 @@
                         </div>
                         <div class="project-links">
                             <a href="supemon.html" class="project-link">Demo</a>
-                            <a href="https://github.com/Darkft28/Supemon" class="project-link">GitHub</a>
+                            <a href="#" class="project-link">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -130,6 +136,7 @@
                         </div>
                         <div class="project-links">
                             <a href="streaming.html" class="project-link">Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -216,8 +223,10 @@
             </div>
             
             <div class="social">
-                <a href="https://github.com/Darkft28" title="GitHub">GitHub</a>
-                <a href="https://www.linkedin.com/in/baptiste-nuytten-dhdi/" title="LinkedIn">LinkedIn</a>
+                <a href="https://github.com/Darkft28" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/baptiste-nuytten-dhdi/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:Baptistenuytten@outlook.fr" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:0699338134" title="Téléphone"><i class="fas fa-phone"></i></a>
             </div>
         </div>
     </section>
@@ -229,5 +238,26 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Script pour le menu hamburger
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            // Fermer le menu en cliquant sur un lien
+            document.querySelectorAll('.nav-links li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
