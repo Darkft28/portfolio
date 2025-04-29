@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker Solaire Arduino | Portfolio Baptiste Nuytten</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/solartracker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <a href="index.html" class="return-link">← Retour au portfolio</a>
+
+    <div class="project-page">
+        <div class="project-header-banner">
+            <h1>Tracker Solaire Arduino</h1>
+            <p>Un système automatisé qui suit la position du soleil pour optimiser la collecte d'énergie solaire</p>
+        </div>
+
+        <div class="container">
+            <section class="project-intro" style="margin-top: 2rem;">
+                <h2>Présentation du projet</h2>
+                <p class="section-subtitle">Un tracker solaire conçu avec Arduino pour maximiser l'efficacité des
+                    panneaux photovoltaïques</p>
+
+                <div class="project-overview">
+                    <p>Ce projet combine électronique, programmation et conception mécanique pour créer un système qui
+                        ajuste automatiquement la position d'un panneau solaire afin qu'il reste orienté vers le soleil
+                        tout au long de la journée, maximisant ainsi la production d'énergie.</p>
+
+                    <p>Le tracker utilise des photorésistances pour détecter la position du soleil et un servomoteur
+                        pour ajuster l'angle du panneau. Un Arduino UNO contrôle le système, en comparant les valeurs de
+                        luminosité pour déterminer la direction optimale.</p>
+
+                    <div class="tech-tags" style="margin: 1.5rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Cablage</span>
+                        <span class="skill-tag">Soudure</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Électronique</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Composants utilisés</h2>
+                <p class="section-subtitle">Les éléments principaux qui constituent ce projet</p>
+
+                <div class="component-images">
+                    <div class="component-card">
+                        <img src="assets/img/arduino/photores.png" alt="Photorésistance" class="component-img">
+                        <div class="component-content">
+                            <h3 class="component-title">Photorésistance (LDR)</h3>
+                            <p class="component-desc">Capteur qui change de résistance selon la luminosité. Utilisé pour
+                                détecter la position du soleil en comparant l'intensité lumineuse sur différents points.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <img src="assets/img/arduino/servo.png" alt="Servomoteur" class="component-img">
+                        <div class="component-content">
+                            <h3 class="component-title">Micro Servomoteur SG90</h3>
+                            <p class="component-desc">Moteur de précision qui permet d'orienter le panneau solaire avec
+                                un contrôle précis de l'angle. Ce servomoteur peut pivoter de 0 à 180 degrés.</p>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <img src="assets/img/arduino/arduinoUno.png" alt="Arduino UNO" class="component-img">
+                        <div class="component-content">
+                            <h3 class="component-title">Arduino UNO</h3>
+                            <p class="component-desc">Microcontrôleur qui sert de cerveau au système. Il traite les
+                                données des capteurs et contrôle le servomoteur en fonction des conditions de
+                                luminosité.</p>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <img src="assets/img/arduino/solarpanel.png" alt="Panneau solaire" class="component-img">
+                        <div class="component-content">
+                            <h3 class="component-title">Panneau solaire</h3>
+                            <p class="component-desc">Convertit l'énergie solaire en électricité. L'efficacité est
+                                maximisée lorsque le panneau est perpendiculaire aux rayons du soleil, d'où l'utilité du
+                                tracker.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Montage du système</h2>
+                <p class="section-subtitle">Schémas de montage et prototype réalisé</p>
+
+                <div class="project-images">
+                    <div class="project-img-container">
+                        <img src="assets/img/arduino/ShémaNum1photo.png" alt="Schéma de montage"
+                            class="project-img-full">
+                    </div>
+
+                    <div class="project-img-container">
+                        <img src="assets/img/arduino/ShémaNumérique.png" alt="Schéma de connexion"
+                            class="project-img-full">
+                    </div>
+
+                    <div class="project-img-container">
+                        <img src="assets/img/arduino/shéma.png" alt="Circuit électronique" class="project-img-full">
+                    </div>
+
+                    <div class="project-img-container">
+                        <img src="assets/img/arduino/finalProject.jpg" alt="Prototype fonctionnel"
+                            class="project-img-full">
+                    </div>
+
+
+                </div>
+
+                <div class="project-overview">
+                    <h3>Principe de fonctionnement</h3>
+                    <p>Le système utilise trois photorésistances pour mesurer la luminosité à différents moments de la
+                        journée (matin, midi, soir). En fonction des lectures, l'Arduino détermine la position optimale
+                        du panneau solaire et ajuste l'angle du servomoteur en conséquence :</p>
+                    <ul>
+                        <li><strong>Matin (val_matin > val_midi && val_matin > val_soir)</strong> : Position à 120° pour
+                            capter les rayons du matin</li>
+                        <li><strong>Midi (val_midi > val_matin && val_midi > val_soir)</strong> : Position à 90° pour
+                            capter les rayons zénithaux</li>
+                        <li><strong>Soir (val_soir > val_matin && val_soir > val_midi)</strong> : Position à 45° pour
+                            capter les rayons du soir</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="code-section">
+                <h2>Code du projet</h2>
+                <p>Le code ci-dessous illustre la logique principale du tracker solaire. Il compare les valeurs des
+                    capteurs et ajuste la position du servomoteur en conséquence :</p>
+
+                <div class="code-block">
+                    <span class="code-keyword">if</span> (val_matin > val_midi && val_matin > val_soir) {<br>
+                    angle = 120;<br>
+                    positionSoleil = <span class="code-string">"Matin"</span>;<br>
+                    } <span class="code-keyword">else if</span> (val_midi > val_matin && val_midi > val_soir) {<br>
+                    angle = 90;<br>
+                    positionSoleil = <span class="code-string">"Midi"</span>;<br>
+                    } <span class="code-keyword">else if</span> (val_soir > val_matin && val_soir > val_midi) {<br>
+                    angle = 45;<br>
+                    positionSoleil = <span class="code-string">"Soir"</span>;<br>
+                    }<br>
+
+                    servo.write(angle);<br>
+                    Serial.print(<span class="code-string">"Le moteur est en direction du "</span>);<br>
+                    Serial.print(positionSoleil);<br>
+                    Serial.print(<span class="code-string">", angle : "</span>);<br>
+                    Serial.println(angle);<br>
+                </div>
+            </section>
+
+            <section class="flowchart-section">
+                <h2>Logique du programme</h2>
+                <p class="section-subtitle">Organigramme montrant la prise de décision pour le positionnement du panneau
+                </p>
+
+                <img src="assets/img/arduino/Algosolar.png" alt="Organigramme du tracker solaire" class="flowchart-img">
+
+                <div class="project-overview" style="margin-top: 2rem;">
+                    <h3>Avantages du système</h3>
+                    <p>Ce tracker solaire présente plusieurs avantages par rapport à un panneau solaire fixe :</p>
+                    <ul>
+                        <li><strong>Efficacité accrue</strong> : Augmentation de la production d'énergie jusqu'à 30-40%
+                            par rapport à un panneau fixe</li>
+                        <li><strong>Autonomie</strong> : Fonctionnement entièrement automatisé ne nécessitant pas
+                            d'intervention humaine</li>
+                        <li><strong>Adaptabilité</strong> : S'ajuste automatiquement aux conditions changeantes de
+                            luminosité</li>
+                        <li><strong>Économique</strong> : Réalisé avec des composants abordables et facilement
+                            accessibles</li>
+                        <li><strong>Évolutif</strong> : Possibilité d'ajouter des fonctionnalités comme le stockage de
+                            données ou la communication sans fil</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Conclusion et perspectives</h2>
+                <p class="section-subtitle">Résultats et améliorations futures</p>
+
+                <div class="project-overview">
+                    <p>Ce projet de tracker solaire démontre comment des technologies relativement simples peuvent être
+                        combinées pour créer un système efficace d'optimisation énergétique. Les tests ont montré une
+                        augmentation significative de la production d'énergie par rapport à un panneau fixe.</p>
+
+                    <h3>Améliorations futures</h3>
+                    <ul>
+                        <li><strong>Système à deux axes</strong> : Ajouter un second servomoteur pour suivre le soleil
+                            horizontalement et verticalement</li>
+                        <li><strong>Système de stockage de données</strong> : Enregistrer les données de production pour
+                            analyse</li>
+                        <li><strong>Interface de contrôle</strong> : Développer une application mobile pour surveiller
+                            le système à distance</li>
+                        <li><strong>Alimentation autonome</strong> : Utiliser une partie de l'énergie produite pour
+                            alimenter le système lui-même</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="credits">
+            <p>Projet développé par Baptiste Nuytten | 2023</p>
+        </div>
+    </div>
+</body>
+
+</html>

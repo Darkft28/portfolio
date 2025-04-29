@@ -1,0 +1,212 @@
+/* Styles spécifiques à la page tracker solaire */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.return-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.return-link:hover {
+    background-color: var(--accent);
+}
+
+.project-page {
+    min-height: 100vh;
+    background-color: var(--light);
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.project-header-banner {
+    background-color: var(--dark);
+    color: white;
+    padding: 3rem 0 2rem;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.project-header-banner h1 {
+    color: white;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.project-header-banner p {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.component-images {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.component-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.component-card:hover {
+    transform: translateY(-5px);
+}
+
+.component-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.component-content {
+    padding: 1rem;
+}
+
+.component-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.component-desc {
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.project-overview {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-img-container {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.project-img-full {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.code-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.code-block {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: monospace;
+    margin: 1rem 0;
+}
+
+.code-comment {
+    color: #94a3b8;
+}
+
+.code-keyword {
+    color: #3b82f6;
+}
+
+.code-string {
+    color: #10b981;
+}
+
+.code-number {
+    color: #f59e0b;
+}
+
+.flowchart-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.flowchart-img {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.credits {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .project-images {
+        grid-template-columns: 1fr;
+    }
+
+    .component-images {
+        justify-content: center;
+    }
+
+    .component-card {
+        max-width: 100%;
+    }
+
+    .flowchart-img {
+        max-width: 100%;
+    }
+}

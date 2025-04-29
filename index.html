@@ -78,70 +78,118 @@
         </div>
     </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2>Mes projets</h2>
-            <p class="section-subtitle">Une sélection de projets personnels et professionnels que j'ai développés.</p>
+    <!-- Structure correcte pour la section des projets -->
+<section id="projects">
+    <div class="container">
+        <h2>Mes projets</h2>
+        <p class="section-subtitle">Une sélection de projets personnels et professionnels que j'ai développés.</p>
+
+        
+        
+        <div class="projects">
+
+            <div class="project-card">
+                <img src="assets/img/FilmShop.png" alt="Projet 4" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Site de streaming</h3>
+                    <p>Un site de streaming permettant l'inscription, la connexion, l'ajout au panier et la récupération des films depuis l'API TMDB pour les stocker dans une base de données MySQL, gérée via phpMyAdmin.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Git</span>
+                        <span class="project-tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="streaming.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                    </div>
+                </div>
+            </div> 
             
-            <div class="projects">
-                <div class="project-card">
-                    <img src="assets/img/Strategium.png" alt="Projet 1" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Jeu de plateau Strategium</h3>
-                        <p>Deux joueurs s'affrontent pour capturer les pièces adverses sur un plateau dynamique. Le jeu mélange des règles inspirées des échecs ♟️ avec une mécanique unique de capture.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Tkinter</span>
-                            <span class="project-tag">Pygame</span>
-                            <span class="project-tag">Git</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="strategium-demo.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
-                            <a href="https://github.com/Darkft28/Strategium" class="project-link">GitHub <i class="fab fa-github"></i> </a>
-                        </div>
+            <div class="project-card">
+                <img src="assets/img/Strategium.png" alt="Projet 1" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Jeu de plateau Strategium</h3>
+                    <p>Deux joueurs s'affrontent pour capturer les pièces adverses sur un plateau dynamique. Le jeu mélange des règles inspirées des échecs ♟️ avec une mécanique unique de capture.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Tkinter</span>
+                        <span class="project-tag">Pygame</span>
+                        <span class="project-tag">Git</span>
                     </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="assets/img/Supemon.png" alt="Projet 2" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Jeu Pokémon en CLI</h3>
-                        <p>Un jeu Pokémon fonctionnel développé en C, intégrant un système de sauvegarde, de capture, de gain d'expérience et de gestion des attaques. Ce projet met en œuvre des mécaniques de jeu captivantes pour une expérience immersive.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">C</span>
-                            <span class="project-tag">Git</span>
-                            <span class="project-tag">Makefile</span>
-                            <span class="project-tag">CLI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="supemon.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
-                            <a href="https://github.com/Darkft28/Supemon" class="project-link">GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="assets/img/FilmShop.png" alt="Projet 3" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Site de streaming</h3>
-                        <p>Un site de streaming permettant l'inscription, la connexion, l'ajout au panier et la récupération des films depuis l'API TMDB pour les stocker dans une base de données MySQL, gérée via phpMyAdmin.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">PHP</span>
-                            <span class="project-tag">MySQL</span>
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Git</span>
-                            <span class="project-tag">Docker</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="streaming.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
-                        </div>
+                    <div class="project-links">
+                        <a href="strategium-demo.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                        <a href="https://github.com/Darkft28/Strategium" class="project-link">GitHub <i class="fab fa-github"></i> </a>
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="project-card">
+                <img src="assets/img/arduino/finalProject.jpg" alt="Projet 2" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Tracker Solaire</h3>
+                    <p>Un projet Arduino conçu pour suivre la position du soleil et maximiser l'exposition solaire. Ce tracker solaire utilise des photoresistances pour ajuster automatiquement l'orientation d'un panneau solaire, optimisant ainsi la collecte d'énergie.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Arduino</span>
+                        <span class="project-tag">Électronique</span>
+                        <span class="project-tag">Soudage</span>
+                        <span class="project-tag">C++</span>
+                        <span class="project-tag">Git</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="solartracker.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="project-card">
+                <img src="assets/img/Supemon.png" alt="Projet 3" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Jeu Pokémon en CLI</h3>
+                    <p>Un jeu Pokémon fonctionnel développé en C, intégrant un système de sauvegarde, de capture, de gain d'expérience et de gestion des attaques. Ce projet met en œuvre des mécaniques de jeu captivantes pour une expérience immersive.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">C</span>
+                        <span class="project-tag">Git</span>
+                        <span class="project-tag">Makefile</span>
+                        <span class="project-tag">CLI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="supemon.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                        <a href="https://github.com/Darkft28/Supemon" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+           
+
+            <div class="project-card">
+                <img src="assets/img/autoGarden/Microbit.png" alt="Projet Jardin Automatique" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Jardin Automatique</h3>
+                    <p>Un système automatisé utilisant une carte Arduino pour arroser un jardin en fonction de l'humidité du sol. Le projet intègre une pompe à eau et des capteurs d'humidité placés directement dans le sol pour un arrosage optimal.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Arduino</span>
+                        <span class="project-tag">C++</span>
+                        <span class="project-tag">Capteurs</span>
+                        <span class="project-tag">Électronique</span>
+                        <span class="project-tag">Git</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="autoGarden.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+
+
+
+    </div>
+</section>
 
     <section id="experience">
         <div class="container">

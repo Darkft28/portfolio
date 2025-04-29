@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardin Automatique Arduino | Portfolio Baptiste Nuytten</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/solartracker.css"> <!-- Réutilisation des styles du tracker solaire -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <a href="index.html" class="return-link">← Retour au portfolio</a>
+
+    <div class="project-page">
+        <div class="project-header-banner">
+            <h1>Jardin Automatique Arduino</h1>
+            <p>Un système intelligent d'arrosage automatique basé sur la détection d'humidité du sol</p>
+        </div>
+
+        <div class="container">
+            <section class="project-intro" style="margin-top: 2rem;">
+                <h2>Présentation du projet</h2>
+                <p class="section-subtitle">Une solution autonome pour l'arrosage optimal des plantes</p>
+
+                <div class="project-overview">
+                    <p>Ce projet combine l'électronique et la programmation pour créer un système d'arrosage automatique
+                        intelligent. À l'aide de capteurs d'humidité placés dans le sol, le système détecte quand une
+                        plante a besoin d'eau et active automatiquement une pompe pour l'arroser.</p>
+
+                    <p>Le jardin automatique utilise un Arduino pour traiter les données des capteurs et contrôler la
+                        pompe. Cette solution permet d'optimiser l'utilisation de l'eau tout en assurant la bonne santé
+                        des plantes, même pendant les périodes d'absence.</p>
+
+                    <div class="tech-tags" style="margin: 1.5rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Capteurs</span>
+                        <span class="skill-tag">Électronique</span>
+                        <span class="skill-tag">Pompe à eau</span>
+                        <span class="skill-tag">Relais</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Composants utilisés</h2>
+                <p class="section-subtitle">Les éléments clés qui constituent ce système d'arrosage intelligent</p>
+
+                <div class="component-images">
+                    <div class="component-card">
+                        <img src="assets/img/autogarden/Watersensor.jpg" alt="Capteur d'humidité du sol"
+                            class="component-img">
+                        <div class="component-content">
+                            <h3 class="component-title">Capteur d'humidité du sol</h3>
+                            <p class="component-desc">Détecte le niveau d'humidité dans le sol. Lorsque le sol devient
+                                trop sec, le capteur envoie un signal à l'Arduino pour déclencher l'arrosage.</p>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <img src="assets/img/autogarden/pump.png" alt="Mini pompe à eau" class="component-img">
+                        <div class="component-content">
+                            <h3 class="component-title">Mini pompe à eau</h3>
+                            <p class="component-desc">Pompe submersible qui permet d'acheminer l'eau du réservoir vers
+                                la plante. Activée par l'Arduino via un module relais lorsque le seuil d'humidité est
+                                atteint.</p>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <img src="assets/img/arduino/arduinoUno.png" alt="Arduino UNO" class="component-img">
+                        <div class="component-content">
+                            <h3 class="component-title">Arduino UNO</h3>
+                            <p class="component-desc">Microcontrôleur qui traite les données des capteurs et contrôle
+                                les actionneurs. Il exécute l'algorithme qui détermine quand activer la pompe à eau.</p>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <img src="assets/img/autogarden/relay.png" alt="Module relais" class="component-img">
+                        <div class="component-content">
+                            <h3 class="component-title">Module relais</h3>
+                            <p class="component-desc">Permet à l'Arduino de contrôler des appareils nécessitant plus de
+                                puissance comme la pompe à eau. Agit comme un interrupteur électronique pour activer ou
+                                désactiver la pompe.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Montage et réalisation</h2>
+                <p class="section-subtitle">Schémas de connexion et prototype fonctionnel</p>
+
+                <div class="project-images">
+                    <div class="project-img-container">
+                        <img src="assets/img/autogarden/cablage.jpg" alt="Schéma de connexion du système d'arrosage"
+                            class="project-img-full">
+                    </div>
+
+                    <div class="project-img-container">
+                        <img src="assets/img/autogarden/Versionmaison.jpg" alt="Prototype fonctionnel"
+                            class="project-img-full">
+                    </div>
+
+                    <div class="project-img-container">
+                        <img src="assets/img/autogarden/allcomponent.jpg" alt="Composants du système"
+                            class="project-img-full">
+                    </div>
+
+                    <div class="project-img-container">
+                        <img src="assets/img/autogarden/Microbit.png" alt="Version avec Micro:bit"
+                            class="project-img-full">
+                    </div>
+                </div>
+
+                <div class="project-overview">
+                    <h3>Principe de fonctionnement</h3>
+                    <p>Le système fonctionne selon un principe simple mais efficace :</p>
+                    <ul>
+                        <li><strong>Détection</strong> : Le capteur d'humidité mesure en continu le taux d'humidité du
+                            sol</li>
+                        <li><strong>Analyse</strong> : L'Arduino compare la valeur lue avec un seuil prédéfini</li>
+                        <li><strong>Action</strong> : Si l'humidité est inférieure au seuil, l'Arduino active le relais
+                            qui met en marche la pompe à eau</li>
+                        <li><strong>Temporisation</strong> : La pompe s'active pendant une durée déterminée, puis
+                            s'arrête</li>
+                        <li><strong>Répétition</strong> : Après un délai de stabilisation, le système recommence le
+                            cycle de mesure</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="code-section">
+                <h2>Code du projet</h2>
+                <p>Le code ci-dessous illustre la logique principale du système d'arrosage automatique :</p>
+
+                <div class="code-block">
+                    <span class="code-keyword">#define</span> SOIL_SENSOR A0<br>
+                    <span class="code-keyword">#define</span> RELAY_PIN 7<br>
+
+                    <span class="code-keyword">const int</span> DRY_THRESHOLD = 500;<br>
+                    <span class="code-keyword">const int</span> WATERING_TIME = 3000;<br>
+
+                    <span class="code-keyword">void</span> setup() {<br>
+                    Serial.begin(9600);<br>
+                    pinMode(RELAY_PIN, OUTPUT);<br>
+                    digitalWrite(RELAY_PIN, HIGH);<br>
+                    Serial.println(<span class="code-string">"Système d'arrosage automatique initialisé"</span>);<br>
+                    }<br>
+
+                    <span class="code-keyword">void</span> loop() {<br>
+                    <span class="code-keyword">int</span> soilMoisture = analogRead(SOIL_SENSOR);<br>
+                    Serial.print(<span class="code-string">"Humidité du sol: "</span>);<br>
+                    Serial.println(soilMoisture);<br>
+                    <span class="code-keyword">if</span> (soilMoisture > DRY_THRESHOLD) {<br>
+                    Serial.println(<span class="code-string">"Sol sec détecté. Activation de l'arrosage..."</span>);<br>
+                    digitalWrite(RELAY_PIN, LOW);<br>
+                    delay(WATERING_TIME);<br>
+                    digitalWrite(RELAY_PIN, HIGH);<br>
+                    Serial.println(<span class="code-string">"Arrosage terminé"</span>);<br>
+                    delay(5000);<br>
+                    }<br>
+                    delay(1000);<br>
+                    }<br>
+                </div>
+            </section>
+
+            <section class="flowchart-section">
+                <h2>Logique du système</h2>
+                <p class="section-subtitle">Organigramme illustrant le fonctionnement de l'arrosage automatique</p>
+
+                <img src="assets/img/autogarden/algo.png" alt="Organigramme du système d'arrosage"
+                    class="flowchart-img">
+
+                <div class="project-overview" style="margin-top: 2rem;">
+                    <h3>Avantages du système</h3>
+                    <p>Ce système d'arrosage automatique présente de nombreux avantages :</p>
+                    <ul>
+                        <li><strong>Économie d'eau</strong> : Arrosage uniquement lorsque nécessaire, évitant le
+                            gaspillage</li>
+                        <li><strong>Autonomie</strong> : Idéal pour les vacances ou les périodes d'absence</li>
+                        <li><strong>Santé des plantes</strong> : Maintien d'un niveau d'humidité optimal pour la
+                            croissance</li>
+                        <li><strong>Modularité</strong> : Facilement adaptable à différents types de plantes et
+                            conditions</li>
+                        <li><strong>Faible coût</strong> : Réalisé avec des composants économiques et largement
+                            disponibles</li>
+                        <li><strong>Extensibilité</strong> : Possibilité d'ajouter d'autres capteurs (lumière,
+                            température) pour un contrôle plus complet</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Variations du projet</h2>
+                <p class="section-subtitle">Différentes versions développées</p>
+
+                <div class="project-overview">
+                    <p>Plusieurs versions de ce système ont été développées, adaptées à différents contextes et besoins
+                        :</p>
+
+                    <h3>Version Arduino standard</h3>
+                    <p>La version principale utilisant un Arduino UNO est la plus polyvalente et permet un contrôle
+                        précis avec de nombreuses options de personnalisation du code.</p>
+
+                    <h3>Version Micro:bit</h3>
+                    <p>Une variante utilisant la carte Micro:bit, plus accessible pour un usage éducatif. Cette version
+                        permet une programmation par blocs et inclut un affichage LED intégré pour visualiser l'état du
+                        système.</p>
+
+
+                </div>
+            </section>
+
+
+
+            <div class="credits">
+                <p>Projet développé par Baptiste Nuytten | 2023</p>
+            </div>
+        </div>
+</body>
+
+</html>
