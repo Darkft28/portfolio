@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système PIM - Product Information Management | Portfolio Baptiste Nuytten</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pim.css">
+</head>
+<body>
+    <a href="index.html" class="return-link">← Retour au portfolio</a>
+    
+    <div class="project-page">
+        <div class="project-header-banner">
+            <h1>🚀 Système PIM - Product Information Management</h1>
+            <p>Application web complète de gestion centralisée des informations produits</p>
+        </div>
+        
+        <div class="container">
+            <section class="project-intro" style="margin-top: 2rem;">
+                <h2>Présentation du projet</h2>
+                <p>Le système PIM (Product Information Management) est une application web professionnelle développée pour centraliser et gérer efficacement toutes les informations relatives aux produits d'une entreprise. Cette solution permet d'importer, consulter, filtrer et administrer des catalogues produits complets avec leurs références, fournisseurs, catégories et équivalences.</p>
+                
+                <div class="tech-stack">
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Excel Import/Export</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+                
+                <div class="project-code-link" style="text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
+                    <a href="https://github.com/Darkft28" class="btn" target="_blank">Voir mes projets sur GitHub</a>
+                </div>
+            </section>
+            
+            <section class="screenshots">
+                <h2>Captures d'écran de l'application</h2>
+                <div class="screenshot-container">
+                    <!-- Import Excel -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/pim-4bus/pimWlcm.png" alt="Import Excel dans le système PIM" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Import de données Excel</h3>
+                            <p class="screenshot-desc">Interface d'importation permettant de télécharger un template Excel standardisé et d'importer des données produits en masse. Le système effectue un mapping automatique des colonnes et valide les données avant insertion dans la base. L'export complet permet également de récupérer toutes les données au format Excel.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Consultation -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/pim-4bus/compteur.png" alt="Consultation des données PIM" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Consultation simplifiée</h3>
+                            <p class="screenshot-desc">Vue d'ensemble des statistiques clés du système : références actives/inactives, catégories, acteurs, contrats et équivalences. Cette interface offre des filtres de recherche avancés permettant de filtrer par référence active, catégorie, sous-catégorie, plateforme, qualité, trigramme, acteur, type d'acteur, contrat et client.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tableau de données -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/pim-4bus/tab.png" alt="Tableau des produits" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Affichage des produits</h3>
+                            <p class="screenshot-desc">Tableau détaillé présentant l'ensemble des références produits avec pagination. Chaque ligne affiche le code machine, la désignation, la marque, la catégorie, la qualité, le fournisseur avec trigramme, la référence externe, le prix unitaire net, la plateforme, le statut de la référence et le contrat associé. Des actions d'édition et de suppression sont disponibles pour chaque référence.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Administration -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/pim-4bus/adminref.png" alt="Administration des référentiels" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Administration des référentiels</h3>
+                            <p class="screenshot-desc">Interface d'administration permettant de gérer les données de référence : catégories, plateformes, qualités, acteurs (274 actifs), contrats et fournisseurs (48 actifs). Chaque référentiel dispose d'un compteur et permet l'ajout, la modification et la suppression d'éléments avec gestion du statut actif/inactif.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Équivalences -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/pim-4bus/refequi.png" alt="Gestion des équivalences" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Références équivalentes</h3>
+                            <p class="screenshot-desc">Module de gestion des références équivalentes permettant d'associer plusieurs références d'acteurs différents pour un même produit. Le tableau affiche l'acteur, la désignation, la référence équivalente, la qualité, la marque, le statut et la référence de remplacement. Cette fonctionnalité est essentielle pour gérer les produits multi-fournisseurs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ajout de référence -->
+                    <div class="screenshot-card">
+                        <img src="assets/img/pim-4bus/addref.png" alt="Ajout d'une nouvelle référence" class="screenshot-img">
+                        <div class="screenshot-content">
+                            <h3 class="screenshot-title">Ajout de référence</h3>
+                            <p class="screenshot-desc">Formulaire complet d'ajout de nouvelle référence produit avec tous les champs nécessaires : code machine, marque, désignation, catégorie, sous-catégorie, qualité, dimensions (poids, longueur, largeur, hauteur), statut, et URL des photos. L'interface intuitive guide l'utilisateur dans la saisie de toutes les informations produit.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="features" style="margin-top: 3rem;">
+                <h2>Fonctionnalités principales</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <h3 class="feature-title">📥 Import/Export Excel</h3>
+                        <p class="feature-desc">Import massif de données depuis Excel avec template standardisé et export complet des données pour analyse externe.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">🔍 Filtres avancés</h3>
+                        <p class="feature-desc">Système de filtrage multicritères permettant de rechercher rapidement parmi des milliers de références produits.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">📊 Statistiques en temps réel</h3>
+                        <p class="feature-desc">Dashboard avec indicateurs clés : références actives/inactives, catégories, acteurs, contrats et équivalences.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">⚙️ Administration complète</h3>
+                        <p class="feature-desc">Gestion des référentiels : catégories, plateformes, qualités, acteurs, contrats et fournisseurs avec statuts.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">🔄 Gestion des équivalences</h3>
+                        <p class="feature-desc">Association de références équivalentes entre différents fournisseurs pour un même produit.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">✏️ CRUD complet</h3>
+                        <p class="feature-desc">Création, lecture, modification et suppression de toutes les données avec validation et contrôles.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">📄 Pagination</h3>
+                        <p class="feature-desc">Affichage paginé optimisé pour gérer de grands volumes de données (395 pages dans l'exemple).</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3 class="feature-title">🎯 Interface responsive</h3>
+                        <p class="feature-desc">Design adaptatif fonctionnant sur tous les appareils : ordinateurs, tablettes et smartphones.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="technical" style="margin-top: 3rem;">
+                <h2>Architecture technique</h2>
+                <p>Ce projet met en œuvre une architecture web moderne et robuste :</p>
+                <ul>
+                    <li><strong>Backend PHP</strong> - Logique métier avec architecture MVC pour une meilleure organisation du code</li>
+                    <li><strong>Base de données MySQL</strong> - Schéma relationnel optimisé avec tables pour produits, acteurs, catégories, contrats, fournisseurs et équivalences</li>
+                    <li><strong>Import/Export Excel</strong> - Bibliothèque PHPSpreadsheet pour lire et écrire des fichiers Excel complexes</li>
+                    <li><strong>Filtrage dynamique</strong> - Requêtes SQL paramétrées avec jointures multiples pour des recherches performantes</li>
+                    <li><strong>Interface utilisateur</strong> - Bootstrap 5 pour un design moderne et responsive</li>
+                    <li><strong>Validation des données</strong> - Contrôles côté serveur et client pour garantir l'intégrité des données</li>
+                    <li><strong>Sécurité</strong> - Protection contre les injections SQL, validation des entrées et gestion des sessions</li>
+                    <li><strong>Pagination optimisée</strong> - Chargement efficace de grands ensembles de données</li>
+                </ul>
+            </section>
+            
+            <section class="use-cases" style="margin-top: 3rem;">
+                <h2>Cas d'usage</h2>
+                <p>Le système PIM répond à plusieurs besoins métier :</p>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Centralisation des données produits</h3>
+                    <p class="feature-desc">Regrouper toutes les informations produits dispersées dans différents fichiers Excel en une base de données unique et structurée, accessible à toute l'entreprise.</p>
+                </div>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Gestion multi-fournisseurs</h3>
+                    <p class="feature-desc">Suivre les équivalences entre références de différents fournisseurs pour faciliter les achats et optimiser les coûts, avec possibilité de substitution en cas de rupture de stock.</p>
+                </div>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Catalogue produits dynamique</h3>
+                    <p class="feature-desc">Permettre aux équipes commerciales d'accéder rapidement aux informations produits à jour avec prix, disponibilité et caractéristiques techniques complètes.</p>
+                </div>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Analyse et reporting</h3>
+                    <p class="feature-desc">Exporter les données pour analyses dans Excel, génération de rapports ou intégration avec d'autres systèmes (ERP, e-commerce).</p>
+                </div>
+            </section>
+            
+            <section class="challenges" style="margin-top: 3rem;">
+                <h2>Défis techniques relevés</h2>
+                <p>Le développement de ce système PIM a nécessité de surmonter plusieurs défis :</p>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Import Excel complexe</h3>
+                    <p class="feature-desc">Gérer l'import de fichiers Excel avec validation des données, mapping des colonnes, gestion des erreurs et mise à jour intelligente (insert ou update selon l'existence de la référence). Le système détecte automatiquement la structure du fichier et adapte l'import en conséquence.</p>
+                </div>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Performance des requêtes</h3>
+                    <p class="feature-desc">Optimiser les requêtes SQL pour afficher rapidement des milliers de références avec filtres multiples. Mise en place d'index sur les colonnes fréquemment recherchées et utilisation de jointures efficaces pour minimiser le nombre de requêtes.</p>
+                </div>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Gestion des relations</h3>
+                    <p class="feature-desc">Modéliser correctement les relations entre produits, fournisseurs, catégories et équivalences tout en maintenant l'intégrité référentielle. Utilisation de clés étrangères et de contraintes pour garantir la cohérence des données.</p>
+                </div>
+                
+                <div class="feature-item" style="margin-top: 1rem;">
+                    <h3 class="feature-title">Interface utilisateur intuitive</h3>
+                    <p class="feature-desc">Créer une interface claire et ergonomique permettant de gérer des volumes importants de données sans complexité. Les filtres sont accessibles mais ne surchargent pas l'interface, et les actions importantes sont mises en évidence.</p>
+                </div>
+            </section>
+            
+            <section class="future" style="margin-top: 3rem;">
+                <h2>Évolutions futures</h2>
+                <p>Plusieurs améliorations sont envisagées pour enrichir le système :</p>
+                <ul>
+                    <li><strong>API REST</strong> - Exposer les données via une API pour intégration avec d'autres systèmes (ERP, e-commerce, applications mobiles)</li>
+                    <li><strong>Gestion des images</strong> - Upload et stockage d'images produits avec miniatures et galeries</li>
+                    <li><strong>Historique des modifications</strong> - Traçabilité complète des changements avec date, utilisateur et anciennes valeurs</li>
+                    <li><strong>Workflow de validation</strong> - Système d'approbation pour les modifications importantes avant publication</li>
+                    <li><strong>Export multi-formats</strong> - PDF, CSV, JSON en plus d'Excel pour différents usages</li>
+                    <li><strong>Notifications</strong> - Alertes automatiques en cas de prix modifié, stock faible ou nouvelle équivalence</li>
+                    <li><strong>Recherche full-text</strong> - Moteur de recherche avancé avec recherche dans les descriptions et caractéristiques</li>
+                    <li><strong>Multi-langue</strong> - Support de plusieurs langues pour les désignations et descriptions produits</li>
+                </ul>
+            </section>
+        </div>
+        
+        <div class="credits">
+            <p>Développé par Baptiste Nuytten | Système PIM professionnel de gestion de données produits</p>
+        </div>
+    </div>
+</body>
+</html>
