@@ -1,0 +1,469 @@
+/* Animations avancées basées sur le scroll */
+
+/* Hero Section - Fixed puis disparition progressive */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-wrapper.scrolled {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.hero-content {
+    transition: all 0.5s ease;
+}
+
+/* Effet de parallax sur les éléments du hero */
+.hero-text {
+    transition: all 0.3s ease;
+}
+
+.hero-image {
+    transition: all 0.3s ease;
+}
+
+/* Section About - Apparition fluide */
+#about {
+    position: relative;
+    z-index: 2;
+    background: var(--light);
+    border-radius: 40px 40px 0 0;
+    margin-top: -10vh;
+    padding-top: 8rem;
+}
+
+[data-theme="dark"] #about {
+    background: var(--light);
+}
+
+/* ===== CARROUSEL COVERFLOW - CARTES CÔTE À CÔTE ===== */
+.projects-carousel-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.projects-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    perspective: 1200px;
+}
+
+.projects-carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+/* Carte de base */
+.projects-carousel-track .project-card {
+    position: absolute;
+    width: 380px;
+    min-height: 500px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Carte centrale - grande et nette au centre */
+.projects-carousel-track .project-card.center {
+    transform: translateX(0) scale(1.1);
+    opacity: 1;
+    z-index: 10;
+    filter: blur(0px) brightness(1);
+    pointer-events: all;
+}
+
+/* Carte de gauche - visible sur le côté gauche */
+.projects-carousel-track .project-card.left {
+    transform: translateX(-480px) scale(0.9) rotateY(15deg);
+    opacity: 0.7;
+    z-index: 5;
+    filter: blur(1px) brightness(0.85);
+    pointer-events: none;
+}
+
+/* Carte de droite - visible sur le côté droit */
+.projects-carousel-track .project-card.right {
+    transform: translateX(480px) scale(0.9) rotateY(-15deg);
+    opacity: 0.7;
+    z-index: 5;
+    filter: blur(1px) brightness(0.85);
+    pointer-events: none;
+}
+
+/* Cartes cachées */
+.projects-carousel-track .project-card.hidden {
+    transform: translateX(0) scale(0.5);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Flèches de navigation */
+.carousel-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    color: var(--dark);
+    box-shadow: var(--shadow-md);
+    user-select: none;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Indicateur de position */
+.carousel-info {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* Dots de navigation */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--primary);
+    transform: scale(1.3);
+}
+
+.carousel-dot:hover {
+    background: var(--primary);
+    opacity: 0.7;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .projects-carousel-wrapper {
+        height: auto;
+        perspective: none;
+    }
+
+    .projects-carousel-track .project-card {
+        position: relative;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100%;
+        margin-bottom: 2rem;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        pointer-events: all !important;
+    }
+
+    .projects-carousel-track .project-card.hidden {
+        display: block;
+    }
+
+    .carousel-controls,
+    .carousel-dots {
+        display: none;
+    }
+}
+
+
+/* Effet de progression sur les sections */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-section.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation des skill tags au scroll */
+.skills .skill-tag {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skills .skill-tag.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Effet de compteur animé pour les stats */
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Timeline avec révélation progressive */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(50px);
+}
+
+.timeline-item.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Indicateur de scroll */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--gradient-1);
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+/* Bouton "Scroll to top" */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    border: none;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Effet de flou progressif sur le hero */
+.hero-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease;
+    pointer-events: none;
+}
+
+.hero-backdrop.blurred {
+    backdrop-filter: blur(10px);
+}
+
+
+/* Effet magnétique sur les cartes de projet */
+.project-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card.magnetic-active {
+    transform: translateY(-15px) scale(1.02);
+    z-index: 10;
+}
+
+/* Animation de texte qui se dévoile */
+.text-reveal {
+    overflow: hidden;
+}
+
+.text-reveal span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.text-reveal.revealed span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Animation de chargement initiale */
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: heroEnter 1s ease;
+}
+
+/* Effet de particules flottantes */
+.floating-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float-particle 15s infinite ease-in-out;
+}
+
+@keyframes float-particle {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(100px, -100px);
+    }
+    50% {
+        transform: translate(-50px, -200px);
+    }
+    75% {
+        transform: translate(-150px, -100px);
+    }
+}
+
+/* Effet de lueur progressive */
+.glow-effect {
+    position: relative;
+}
+
+.glow-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.glow-effect:hover::after {
+    opacity: 1;
+}
+
+/* Section header avec effet de slide */
+.section-header {
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-header.revealed h2 {
+    transform: translateX(0);
+}
+
+/* Effet de vague sur les compétences */
+.skills {
+    perspective: 1000px;
+}
+
+.skills .skill-tag {
+    transform-style: preserve-3d;
+}
+
+.skills .skill-tag.wave-1 { transition-delay: 0.05s; }
+.skills .skill-tag.wave-2 { transition-delay: 0.1s; }
+.skills .skill-tag.wave-3 { transition-delay: 0.15s; }
+.skills .skill-tag.wave-4 { transition-delay: 0.2s; }
+.skills .skill-tag.wave-5 { transition-delay: 0.25s; }
+.skills .skill-tag.wave-6 { transition-delay: 0.3s; }
+.skills .skill-tag.wave-7 { transition-delay: 0.35s; }
+.skills .skill-tag.wave-8 { transition-delay: 0.4s; }
+.skills .skill-tag.wave-9 { transition-delay: 0.45s; }
