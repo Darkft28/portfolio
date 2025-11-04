@@ -254,6 +254,12 @@ input, textarea, select {
     padding: 0 var(--spacing-20);
 }
 
+/* Exception pour la section expérience - utiliser toute la largeur */
+#experience .container-full {
+    max-width: 100%;
+    padding: 0;
+}
+
 /* Container pleine largeur pour le header */
 header .container {
     max-width: 100%;

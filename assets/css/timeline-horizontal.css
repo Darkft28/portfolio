@@ -58,13 +58,14 @@
 /* Track contenant les éléments */
 .timeline-horizontal-track {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;  /* Changé de space-between à space-evenly */
     align-items: center;
     width: 100%;
+    min-width: 100vw;  /* Ajouté pour forcer l'utilisation de toute la largeur */
     position: relative;
     z-index: 2;
-    gap: var(--spacing-8);
-    padding: 0 var(--spacing-10);
+    gap: var(--spacing-12);  /* Augmenté de 8 à 12 pour plus d'espace */
+    padding: 0 var(--spacing-20);  /* Augmenté le padding pour mieux utiliser l'espace */
 }
 
 /* Item de la timeline */
