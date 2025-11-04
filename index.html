@@ -6,6 +6,8 @@
     <title>Portfolio - Baptiste Nuytten</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/scroll-animations.css">
+    <link rel="stylesheet" href="assets/css/carousel-3d.css">
+    <link rel="stylesheet" href="assets/css/timeline-horizontal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
@@ -30,13 +32,12 @@
             </nav>
         </div>
     </header>
-
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Bonjour, je suis <span class="highlight typewriter">Baptiste Nuytten</span></h1>
-                    <p class="subtitle">Étudiant en première année à Supinfo Caen</p>
+                    <p class="subtitle">Étudiant en deuxième année à Supinfo Caen</p>
                     <p class="tagline">Passionné par le développement et l'innovation technologique</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn">Voir mes projets</a>
@@ -334,12 +335,12 @@
 
         <!-- Indicateurs de pagination -->
         <div class="carousel-indicators">
-            <span class="carousel-indicator active" data-slide-to="0"></span>
-            <span class="carousel-indicator" data-slide-to="1"></span>
-            <span class="carousel-indicator" data-slide-to="2"></span>
-            <span class="carousel-indicator" data-slide-to="3"></span>
-            <span class="carousel-indicator" data-slide-to="4"></span>
-            <span class="carousel-indicator" data-slide-to="5"></span>
+            <span class="carousel-indicator active"></span>
+            <span class="carousel-indicator"></span>
+            <span class="carousel-indicator"></span>
+            <span class="carousel-indicator"></span>
+            <span class="carousel-indicator"></span>
+            <span class="carousel-indicator"></span>
         </div>
 
 
@@ -348,55 +349,71 @@
 </section>
 
     <section id="experience">
-        <div class="container">
+        <div class="container-full">
             <h2>Mon parcours</h2>
             <p class="section-subtitle">Mon expérience professionnelle et académique.</p>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024 - 2029</div>
-                        <h3>Formation Supinfo</h3>
-                        <p>SUPINFO Caen</p>
-                        <p>Première année à SUPINFO, école des experts métiers de l'informatique membre du Groupe IONIS. Formation complète en développement et système d'information.</p>
+
+            <div class="timeline-horizontal-wrapper">
+                <div class="timeline-horizontal">
+                    <div class="timeline-horizontal-track">
+
+                        <!-- Stage 3ème - 2020 -->
+                        <div class="timeline-horizontal-item">
+                            <div class="timeline-horizontal-content">
+                                <div class="timeline-icon">🔧</div>
+                                <span class="timeline-horizontal-date">Déc 2020</span>
+                                <h3>Stage 3ème</h3>
+                                <p class="timeline-horizontal-location">SYRACOM - Eslettes</p>
+                                <p>Découverte du modélisme et de la radio-communication.</p>
+                            </div>
+                        </div>
+
+                        <!-- BAC STI2D - 2021-2024 -->
+                        <div class="timeline-horizontal-item">
+                            <div class="timeline-horizontal-content">
+                                <div class="timeline-icon">🎓</div>
+                                <span class="timeline-horizontal-date">2021 - 2024</span>
+                                <h3>BAC STI2D - SIN</h3>
+                                <p class="timeline-horizontal-location">Lycée Delamare Deboutteville</p>
+                                <p>Spécialisation en Systèmes d'Information et Numérique.</p>
+                            </div>
+                        </div>
+
+                        <!-- Récolte 2022-2023 -->
+                        <div class="timeline-horizontal-item">
+                            <div class="timeline-horizontal-content">
+                                <div class="timeline-icon">🌾</div>
+                                <span class="timeline-horizontal-date">2022 - 2023</span>
+                                <h3>Récolte céréalière</h3>
+                                <p class="timeline-horizontal-location">Puchay</p>
+                                <p>Ferme familiale et exploitation de rhubarbe. Travail saisonnier pendant les périodes de récolte.</p>
+                            </div>
+                        </div>
+
+                        <!-- Saisonnier 2024 -->
+                        <div class="timeline-horizontal-item">
+                            <div class="timeline-horizontal-content">
+                                <div class="timeline-icon">🚜</div>
+                                <span class="timeline-horizontal-date">Été 2024</span>
+                                <h3>Saisonnier agricole</h3>
+                                <p class="timeline-horizontal-location">Sévépi 27 - Etrepagny</p>
+                                <p>Silo de céréales, réception et contrôles des céréales.</p>
+                            </div>
+                        </div>
+
+                        <!-- SUPINFO - 2024-2029 -->
+                        <div class="timeline-horizontal-item">
+                            <div class="timeline-horizontal-content">
+                                <div class="timeline-icon">💻</div>
+                                <span class="timeline-horizontal-date">2024 - 2029</span>
+                                <h3>Formation SUPINFO</h3>
+                                <p class="timeline-horizontal-location">SUPINFO Caen</p>
+                                <p>École des experts métiers de l'informatique. Formation complète en développement et systèmes d'information.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Juillet - Août 2024</div>
-                        <h3>Saisonnier agricole</h3>
-                        <p>Sévépi 27 - Etrepagny</p>
-                        <p>Silo de céréales, réception et contrôles des céréales.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 - 2023</div>
-                        <h3>Récolte céréalière</h3>
-                        <p>27 - Puchay</p>
-                        <p>Août 2023 : Ferme Familiale<br>Juin 2023 : Exploitation de Rhubarbe<br>Août 2022 : Ferme Familiale<br>Juin 2022 : Exploitation de Rhubarbe</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2021 - 2024</div>
-                        <h3>BAC STI2D - SIN</h3>
-                        <p>Lycée Delamare Deboutteville - Forges-les-Eaux</p>
-                        <p>Spécialisation en Systèmes d'Information et Numérique.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Décembre 2020</div>
-                        <h3>Stage de découverte 3ème</h3>
-                        <p>SYRACOM (76 - Eslettes)</p>
-                        <p>Découverte du modélisme et de la radio-communication.</p>
-                    </div>
-                </div>           
             </div>
         </div>
     </section>
@@ -514,175 +531,6 @@
                 observer.observe(section);
             });
 
-            // Carrousel de projets avec système d'index circulaire
-            const carousel = {
-                cards: document.querySelectorAll('.project-card'),
-                currentIndex: 1, // L'index central (carte mise en avant)
-                totalCards: document.querySelectorAll('.project-card').length,
-                autoPlayInterval: null,
-                isTransitioning: false,
-
-                init() {
-                    if (this.cards.length === 0) return;
-
-                    this.updateCarousel();
-                    this.setupEventListeners();
-                    this.startAutoPlay();
-                },
-
-                // Calcule l'index avec wrap-around (circulaire)
-                getCircularIndex(index) {
-                    return ((index % this.totalCards) + this.totalCards) % this.totalCards;
-                },
-
-                // Met à jour la position de toutes les cartes
-                updateCarousel() {
-                    // Positions: left (index-1), center (index), right (index+1)
-                    const leftIndex = this.getCircularIndex(this.currentIndex - 1);
-                    const centerIndex = this.currentIndex;
-                    const rightIndex = this.getCircularIndex(this.currentIndex + 1);
-
-                    // Retire toutes les positions
-                    this.cards.forEach(card => {
-                        card.removeAttribute('data-position');
-                    });
-
-                    // Applique les nouvelles positions
-                    this.cards[leftIndex].setAttribute('data-position', 'left');
-                    this.cards[centerIndex].setAttribute('data-position', 'center');
-                    this.cards[rightIndex].setAttribute('data-position', 'right');
-
-                    // Met à jour les indicateurs
-                    this.updateIndicators();
-                },
-
-                // Navigation vers la droite
-                next() {
-                    if (this.isTransitioning) return;
-                    this.isTransitioning = true;
-
-                    this.currentIndex = this.getCircularIndex(this.currentIndex + 1);
-                    this.updateCarousel();
-
-                    setTimeout(() => {
-                        this.isTransitioning = false;
-                    }, 600);
-                },
-
-                // Navigation vers la gauche
-                prev() {
-                    if (this.isTransitioning) return;
-                    this.isTransitioning = true;
-
-                    this.currentIndex = this.getCircularIndex(this.currentIndex - 1);
-                    this.updateCarousel();
-
-                    setTimeout(() => {
-                        this.isTransitioning = false;
-                    }, 600);
-                },
-
-                // Va directement à un index spécifique
-                goToSlide(index) {
-                    if (this.isTransitioning) return;
-                    this.isTransitioning = true;
-
-                    this.currentIndex = index;
-                    this.updateCarousel();
-
-                    setTimeout(() => {
-                        this.isTransitioning = false;
-                    }, 600);
-                },
-
-                // Met à jour les indicateurs de pagination
-                updateIndicators() {
-                    const indicators = document.querySelectorAll('.carousel-indicator');
-                    indicators.forEach((indicator, index) => {
-                        if (index === this.currentIndex) {
-                            indicator.classList.add('active');
-                        } else {
-                            indicator.classList.remove('active');
-                        }
-                    });
-                },
-
-                // Configure les événements
-                setupEventListeners() {
-                    // Boutons de navigation
-                    const prevBtn = document.querySelector('.carousel-btn-prev');
-                    const nextBtn = document.querySelector('.carousel-btn-next');
-
-                    if (prevBtn) {
-                        prevBtn.addEventListener('click', () => {
-                            this.prev();
-                            this.resetAutoPlay();
-                        });
-                    }
-
-                    if (nextBtn) {
-                        nextBtn.addEventListener('click', () => {
-                            this.next();
-                            this.resetAutoPlay();
-                        });
-                    }
-
-                    // Indicateurs de pagination
-                    const indicators = document.querySelectorAll('.carousel-indicator');
-                    indicators.forEach((indicator, index) => {
-                        indicator.addEventListener('click', () => {
-                            this.goToSlide(index);
-                            this.resetAutoPlay();
-                        });
-                    });
-
-                    // Pause au survol
-                    const carouselContainer = document.querySelector('.carousel-container');
-                    if (carouselContainer) {
-                        carouselContainer.addEventListener('mouseenter', () => {
-                            this.stopAutoPlay();
-                        });
-
-                        carouselContainer.addEventListener('mouseleave', () => {
-                            this.startAutoPlay();
-                        });
-                    }
-
-                    // Support clavier
-                    document.addEventListener('keydown', (e) => {
-                        if (e.key === 'ArrowLeft') {
-                            this.prev();
-                            this.resetAutoPlay();
-                        } else if (e.key === 'ArrowRight') {
-                            this.next();
-                            this.resetAutoPlay();
-                        }
-                    });
-                },
-
-                // Défilement automatique
-                startAutoPlay() {
-                    this.stopAutoPlay();
-                    this.autoPlayInterval = setInterval(() => {
-                        this.next();
-                    }, 5000); // Défile toutes les 5 secondes
-                },
-
-                stopAutoPlay() {
-                    if (this.autoPlayInterval) {
-                        clearInterval(this.autoPlayInterval);
-                        this.autoPlayInterval = null;
-                    }
-                },
-
-                resetAutoPlay() {
-                    this.stopAutoPlay();
-                    this.startAutoPlay();
-                }
-            };
-
-            // Initialiser le carrousel
-            carousel.init();
 
             // Smooth scroll avec offset pour le header fixe
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -701,5 +549,7 @@
         });
     </script>
     <script src="assets/js/scroll-animations.js"></script>
+    <script src="assets/js/carousel-3d.js"></script>
+    <script src="assets/js/timeline-horizontal.js"></script>
 </body>
 </html>

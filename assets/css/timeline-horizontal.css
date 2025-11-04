@@ -1,0 +1,314 @@
+/* ===================================================================
+   TIMELINE HORIZONTALE ULTRA-MODERNE
+   ================================================================= */
+
+/* Wrapper de la timeline horizontale */
+.timeline-horizontal-wrapper {
+    position: relative;
+    width: 100%;
+    padding: var(--spacing-20) 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar personnalisée moderne */
+.timeline-horizontal-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline-horizontal-wrapper::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-full);
+}
+
+.timeline-horizontal-wrapper::-webkit-scrollbar-thumb {
+    background: var(--gradient-accent);
+    border-radius: var(--radius-full);
+}
+
+.timeline-horizontal-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-accent-hover);
+}
+
+/* Container de la timeline */
+.timeline-horizontal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 100%;
+    padding: 0;
+}
+
+/* Ligne centrale horizontale avec gradient moderne */
+.timeline-horizontal::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Track contenant les éléments */
+.timeline-horizontal-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    gap: var(--spacing-8);
+    padding: 0 var(--spacing-10);
+}
+
+/* Item de la timeline */
+.timeline-horizontal-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 340px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s var(--ease-custom);
+}
+
+.timeline-horizontal-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alternance haut/bas des items */
+.timeline-horizontal-item:nth-child(odd) {
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+.timeline-horizontal-item:nth-child(even) {
+    align-items: center;
+    margin-top: 150px;
+}
+
+/* Icône de l'événement */
+.timeline-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--gradient-accent);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-6);
+    box-shadow: var(--shadow-accent);
+    transition: all var(--transition-normal) var(--ease-bounce);
+    position: relative;
+    z-index: 10;
+}
+
+.timeline-horizontal-item:hover .timeline-icon {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: var(--shadow-accent-lg);
+}
+
+/* Card de contenu ultra-moderne */
+.timeline-horizontal-content {
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal) var(--ease-custom);
+    min-height: 280px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet gradient au hover */
+.timeline-horizontal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal) var(--ease-custom);
+}
+
+.timeline-horizontal-item:hover .timeline-horizontal-content {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-accent-start);
+}
+
+.timeline-horizontal-item:hover .timeline-horizontal-content::before {
+    transform: scaleX(1);
+}
+
+/* Badge date moderne */
+.timeline-horizontal-date {
+    display: inline-block;
+    background: var(--gradient-accent);
+    color: white;
+    padding: var(--spacing-2) var(--spacing-5);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-4);
+    white-space: nowrap;
+    box-shadow: var(--shadow-accent);
+}
+
+/* Titre de l'événement */
+.timeline-horizontal-content h3 {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-3);
+    letter-spacing: -0.01em;
+}
+
+/* Lieu/Entreprise */
+.timeline-horizontal-location {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-4);
+    font-style: italic;
+}
+
+/* Description */
+.timeline-horizontal-content > p:last-child {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+/* ===================================================================
+   RESPONSIVE TIMELINE HORIZONTALE
+   ================================================================= */
+
+@media (max-width: 991px) {
+    .timeline-horizontal-item {
+        min-width: 260px;
+        max-width: 300px;
+    }
+
+    .timeline-horizontal-track {
+        gap: var(--spacing-6);
+        padding: 0 var(--spacing-6);
+    }
+
+    .timeline-horizontal-content {
+        min-height: 240px;
+        padding: var(--spacing-6);
+    }
+
+    .timeline-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Sur mobile, on passe en layout vertical */
+    .timeline-horizontal-wrapper {
+        padding: var(--spacing-16) 0;
+        overflow-x: visible;
+    }
+
+    .timeline-horizontal {
+        padding: 0 var(--spacing-6);
+    }
+
+    .timeline-horizontal::before {
+        top: 0;
+        bottom: 0;
+        left: var(--spacing-8);
+        right: auto;
+        width: 3px;
+        height: auto;
+        transform: none;
+    }
+
+    .timeline-horizontal-track {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-12);
+        padding-left: calc(var(--spacing-12));
+    }
+
+    .timeline-horizontal-item {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+    }
+
+    .timeline-horizontal-item:nth-child(odd),
+    .timeline-horizontal-item:nth-child(even) {
+        margin: 0 !important;
+    }
+
+    .timeline-icon {
+        margin-bottom: var(--spacing-4);
+    }
+
+    .timeline-horizontal-item:hover .timeline-icon {
+        transform: scale(1.15) rotate(5deg);
+    }
+
+    .timeline-horizontal-content {
+        max-width: 100%;
+        text-align: left;
+        padding: var(--spacing-6);
+        min-height: auto;
+    }
+
+    .timeline-horizontal-content::before {
+        left: 0;
+        width: 4px;
+        height: 100%;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    .timeline-horizontal-item:hover .timeline-horizontal-content::before {
+        transform: scaleY(1);
+    }
+}
+
+@media (max-width: 575px) {
+    .timeline-horizontal-item {
+        min-width: 100%;
+    }
+
+    .timeline-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+
+    .timeline-horizontal-content {
+        padding: var(--spacing-5);
+    }
+
+    .timeline-horizontal-content h3 {
+        font-size: var(--font-size-lg);
+    }
+}
