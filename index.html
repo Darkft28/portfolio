@@ -86,125 +86,140 @@
         <h2>Mes projets</h2>
         <p class="section-subtitle">Une sélection de projets personnels et professionnels que j'ai développés.</p>
 
-        
-        
-        <div class="projects">
+        <!-- Carrousel de projets -->
+        <div class="carousel-container">
+            <button class="carousel-btn carousel-btn-prev" aria-label="Projet précédent">
+                <i class="fas fa-chevron-left"></i>
+            </button>
 
-            <div class="project-card">
-                <img src="assets/img/pim-4bus/pimWlcm.png" alt="Système PIM" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Système PIM</h3>
-                    <p>Application web professionnelle de gestion centralisée des informations produits. Import Excel, filtres avancés, gestion des équivalences et administration complète des référentiels pour optimiser la gestion de catalogues produits.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">HTML/CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">Excel</span>
-                        <span class="project-tag">Bootstrap</span>
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                <div class="project-card" data-project-index="0">
+                    <img src="assets/img/pim-4bus/pimWlcm.png" alt="Système PIM" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Système PIM</h3>
+                        <p>Application web professionnelle de gestion centralisée des informations produits. Import Excel, filtres avancés, gestion des équivalences et administration complète des référentiels pour optimiser la gestion de catalogues produits.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="pim.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="pim.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                </div>
+
+                <div class="project-card" data-project-index="1">
+                    <img src="assets/img/FilmShop.png" alt="Projet 4" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Site de streaming</h3>
+                        <p>Un site de streaming permettant l'inscription, la connexion, l'ajout au panier et la récupération des films depuis l'API TMDB pour les stocker dans une base de données MySQL, gérée via phpMyAdmin.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Git</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="streaming.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                        </div>
                     </div>
+                </div>
+
+                <div class="project-card" data-project-index="2">
+                    <img src="assets/img/Strategium.png" alt="Projet 1" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Jeu de plateau Strategium</h3>
+                        <p>Deux joueurs s'affrontent pour capturer les pièces adverses sur un plateau dynamique. Le jeu mélange des règles inspirées des échecs ♟️ avec une mécanique unique de capture.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Tkinter</span>
+                            <span class="project-tag">Pygame</span>
+                            <span class="project-tag">Git</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="strategium-demo.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                            <a href="https://github.com/Darkft28/Strategium" class="project-link">GitHub <i class="fab fa-github"></i> </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project-index="3">
+                    <img src="assets/img/arduino/finalProject.jpg" alt="Projet 2" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Tracker Solaire</h3>
+                        <p>Un projet Arduino conçu pour suivre la position du soleil et maximiser l'exposition solaire. Ce tracker solaire utilise des photoresistances pour ajuster automatiquement l'orientation d'un panneau solaire, optimisant ainsi la collecte d'énergie.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Arduino</span>
+                            <span class="project-tag">Électronique</span>
+                            <span class="project-tag">Soudage</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Git</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="solartracker.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project-index="4">
+                    <img src="assets/img/Supemon.png" alt="Projet 3" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Jeu Pokémon en CLI</h3>
+                        <p>Un jeu Pokémon fonctionnel développé en C, intégrant un système de sauvegarde, de capture, de gain d'expérience et de gestion des attaques. Ce projet met en œuvre des mécaniques de jeu captivantes pour une expérience immersive.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C</span>
+                            <span class="project-tag">Git</span>
+                            <span class="project-tag">Makefile</span>
+                            <span class="project-tag">CLI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="supemon.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                            <a href="https://github.com/Darkft28/Supemon" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project-index="5">
+                    <img src="assets/img/autoGarden/Microbit.png" alt="Projet Jardin Automatique" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Jardin Automatique</h3>
+                        <p>Un système automatisé utilisant une carte Arduino pour arroser un jardin en fonction de l'humidité du sol. Le projet intègre une pompe à eau et des capteurs d'humidité placés directement dans le sol pour un arrosage optimal.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Arduino</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Capteurs</span>
+                            <span class="project-tag">Électronique</span>
+                            <span class="project-tag">Git</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="autoGarden.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <img src="assets/img/FilmShop.png" alt="Projet 4" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Site de streaming</h3>
-                    <p>Un site de streaming permettant l'inscription, la connexion, l'ajout au panier et la récupération des films depuis l'API TMDB pour les stocker dans une base de données MySQL, gérée via phpMyAdmin.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">Git</span>
-                        <span class="project-tag">Docker</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="streaming.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
-                    </div>
-                </div>
-            </div> 
-            
-            <div class="project-card">
-                <img src="assets/img/Strategium.png" alt="Projet 1" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Jeu de plateau Strategium</h3>
-                    <p>Deux joueurs s'affrontent pour capturer les pièces adverses sur un plateau dynamique. Le jeu mélange des règles inspirées des échecs ♟️ avec une mécanique unique de capture.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Tkinter</span>
-                        <span class="project-tag">Pygame</span>
-                        <span class="project-tag">Git</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="strategium-demo.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
-                        <a href="https://github.com/Darkft28/Strategium" class="project-link">GitHub <i class="fab fa-github"></i> </a>
-                    </div>
-                </div>
-            </div>
+            <button class="carousel-btn carousel-btn-next" aria-label="Projet suivant">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
 
-
-
-            <div class="project-card">
-                <img src="assets/img/arduino/finalProject.jpg" alt="Projet 2" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Tracker Solaire</h3>
-                    <p>Un projet Arduino conçu pour suivre la position du soleil et maximiser l'exposition solaire. Ce tracker solaire utilise des photoresistances pour ajuster automatiquement l'orientation d'un panneau solaire, optimisant ainsi la collecte d'énergie.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Arduino</span>
-                        <span class="project-tag">Électronique</span>
-                        <span class="project-tag">Soudage</span>
-                        <span class="project-tag">C++</span>
-                        <span class="project-tag">Git</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="solartracker.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="project-card">
-                <img src="assets/img/Supemon.png" alt="Projet 3" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Jeu Pokémon en CLI</h3>
-                    <p>Un jeu Pokémon fonctionnel développé en C, intégrant un système de sauvegarde, de capture, de gain d'expérience et de gestion des attaques. Ce projet met en œuvre des mécaniques de jeu captivantes pour une expérience immersive.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">C</span>
-                        <span class="project-tag">Git</span>
-                        <span class="project-tag">Makefile</span>
-                        <span class="project-tag">CLI</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="supemon.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
-                        <a href="https://github.com/Darkft28/Supemon" class="project-link">GitHub <i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-           
-
-            <div class="project-card">
-                <img src="assets/img/autoGarden/Microbit.png" alt="Projet Jardin Automatique" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Jardin Automatique</h3>
-                    <p>Un système automatisé utilisant une carte Arduino pour arroser un jardin en fonction de l'humidité du sol. Le projet intègre une pompe à eau et des capteurs d'humidité placés directement dans le sol pour un arrosage optimal.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Arduino</span>
-                        <span class="project-tag">C++</span>
-                        <span class="project-tag">Capteurs</span>
-                        <span class="project-tag">Électronique</span>
-                        <span class="project-tag">Git</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="autoGarden.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
-                    </div>
-                </div>
-            </div>
-
+        <!-- Indicateurs de pagination -->
+        <div class="carousel-indicators">
+            <span class="carousel-indicator active" data-slide-to="0"></span>
+            <span class="carousel-indicator" data-slide-to="1"></span>
+            <span class="carousel-indicator" data-slide-to="2"></span>
+            <span class="carousel-indicator" data-slide-to="3"></span>
+            <span class="carousel-indicator" data-slide-to="4"></span>
+            <span class="carousel-indicator" data-slide-to="5"></span>
         </div>
 
 
@@ -371,13 +386,175 @@
                 observer.observe(section);
             });
 
-            // Observer les cartes de projets
-            document.querySelectorAll('.project-card').forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-                observer.observe(card);
-            });
+            // Carrousel de projets avec système d'index circulaire
+            const carousel = {
+                cards: document.querySelectorAll('.project-card'),
+                currentIndex: 1, // L'index central (carte mise en avant)
+                totalCards: document.querySelectorAll('.project-card').length,
+                autoPlayInterval: null,
+                isTransitioning: false,
+
+                init() {
+                    if (this.cards.length === 0) return;
+
+                    this.updateCarousel();
+                    this.setupEventListeners();
+                    this.startAutoPlay();
+                },
+
+                // Calcule l'index avec wrap-around (circulaire)
+                getCircularIndex(index) {
+                    return ((index % this.totalCards) + this.totalCards) % this.totalCards;
+                },
+
+                // Met à jour la position de toutes les cartes
+                updateCarousel() {
+                    // Positions: left (index-1), center (index), right (index+1)
+                    const leftIndex = this.getCircularIndex(this.currentIndex - 1);
+                    const centerIndex = this.currentIndex;
+                    const rightIndex = this.getCircularIndex(this.currentIndex + 1);
+
+                    // Retire toutes les positions
+                    this.cards.forEach(card => {
+                        card.removeAttribute('data-position');
+                    });
+
+                    // Applique les nouvelles positions
+                    this.cards[leftIndex].setAttribute('data-position', 'left');
+                    this.cards[centerIndex].setAttribute('data-position', 'center');
+                    this.cards[rightIndex].setAttribute('data-position', 'right');
+
+                    // Met à jour les indicateurs
+                    this.updateIndicators();
+                },
+
+                // Navigation vers la droite
+                next() {
+                    if (this.isTransitioning) return;
+                    this.isTransitioning = true;
+
+                    this.currentIndex = this.getCircularIndex(this.currentIndex + 1);
+                    this.updateCarousel();
+
+                    setTimeout(() => {
+                        this.isTransitioning = false;
+                    }, 600);
+                },
+
+                // Navigation vers la gauche
+                prev() {
+                    if (this.isTransitioning) return;
+                    this.isTransitioning = true;
+
+                    this.currentIndex = this.getCircularIndex(this.currentIndex - 1);
+                    this.updateCarousel();
+
+                    setTimeout(() => {
+                        this.isTransitioning = false;
+                    }, 600);
+                },
+
+                // Va directement à un index spécifique
+                goToSlide(index) {
+                    if (this.isTransitioning) return;
+                    this.isTransitioning = true;
+
+                    this.currentIndex = index;
+                    this.updateCarousel();
+
+                    setTimeout(() => {
+                        this.isTransitioning = false;
+                    }, 600);
+                },
+
+                // Met à jour les indicateurs de pagination
+                updateIndicators() {
+                    const indicators = document.querySelectorAll('.carousel-indicator');
+                    indicators.forEach((indicator, index) => {
+                        if (index === this.currentIndex) {
+                            indicator.classList.add('active');
+                        } else {
+                            indicator.classList.remove('active');
+                        }
+                    });
+                },
+
+                // Configure les événements
+                setupEventListeners() {
+                    // Boutons de navigation
+                    const prevBtn = document.querySelector('.carousel-btn-prev');
+                    const nextBtn = document.querySelector('.carousel-btn-next');
+
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', () => {
+                            this.prev();
+                            this.resetAutoPlay();
+                        });
+                    }
+
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', () => {
+                            this.next();
+                            this.resetAutoPlay();
+                        });
+                    }
+
+                    // Indicateurs de pagination
+                    const indicators = document.querySelectorAll('.carousel-indicator');
+                    indicators.forEach((indicator, index) => {
+                        indicator.addEventListener('click', () => {
+                            this.goToSlide(index);
+                            this.resetAutoPlay();
+                        });
+                    });
+
+                    // Pause au survol
+                    const carouselContainer = document.querySelector('.carousel-container');
+                    if (carouselContainer) {
+                        carouselContainer.addEventListener('mouseenter', () => {
+                            this.stopAutoPlay();
+                        });
+
+                        carouselContainer.addEventListener('mouseleave', () => {
+                            this.startAutoPlay();
+                        });
+                    }
+
+                    // Support clavier
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowLeft') {
+                            this.prev();
+                            this.resetAutoPlay();
+                        } else if (e.key === 'ArrowRight') {
+                            this.next();
+                            this.resetAutoPlay();
+                        }
+                    });
+                },
+
+                // Défilement automatique
+                startAutoPlay() {
+                    this.stopAutoPlay();
+                    this.autoPlayInterval = setInterval(() => {
+                        this.next();
+                    }, 5000); // Défile toutes les 5 secondes
+                },
+
+                stopAutoPlay() {
+                    if (this.autoPlayInterval) {
+                        clearInterval(this.autoPlayInterval);
+                        this.autoPlayInterval = null;
+                    }
+                },
+
+                resetAutoPlay() {
+                    this.stopAutoPlay();
+                    this.startAutoPlay();
+                }
+            };
+
+            // Initialiser le carrousel
+            carousel.init();
 
             // Smooth scroll avec offset pour le header fixe
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
