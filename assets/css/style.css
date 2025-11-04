@@ -337,6 +337,28 @@ header .container {
     box-shadow: var(--shadow-md);
 }
 
+/* Bouton outline pour CV */
+.btn-outline {
+    background: transparent;
+    color: var(--color-accent-start);
+    border: 2px solid var(--color-accent-start);
+    box-shadow: none;
+}
+
+.btn-outline::before {
+    background: var(--gradient-accent);
+}
+
+.btn-outline:hover {
+    color: white;
+    border-color: var(--color-accent-start);
+    box-shadow: var(--shadow-accent);
+}
+
+.btn-outline i {
+    margin-right: 8px;
+}
+
 /* ===================================================================
    HEADER ULTRA-MODERNE - GLASSMORPHISM
    ================================================================= */
@@ -572,6 +594,8 @@ nav {
     overflow: hidden;
     border-right: 3px solid var(--color-accent-start);
     white-space: nowrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
     animation:
         typing 2.5s steps(17, end) 0.5s 1 normal both,
         blink-caret 0.75s step-end infinite;
@@ -1549,8 +1573,13 @@ footer {
     }
 
     /* Carrousel mobile */
+    #projects {
+        padding-top: var(--spacing-12);
+    }
+
     .carousel-container {
-        padding: var(--spacing-4) var(--spacing-12);
+        padding: var(--spacing-4) var(--spacing-6);
+        margin-top: var(--spacing-8);
     }
 
     .carousel-track {

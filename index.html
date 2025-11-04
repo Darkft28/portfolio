@@ -37,11 +37,14 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Bonjour, je suis <span class="highlight typewriter">Baptiste Nuytten</span></h1>
-                    <p class="subtitle">Étudiant en deuxième année à Supinfo Caen</p>
+                    <p class="subtitle">Étudiant en deuxième année à Supinfo Caen - Freelance</p>
                     <p class="tagline">Passionné par le développement et l'innovation technologique</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn">Voir mes projets</a>
                         <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                        <a href="download/CV_Nuytten_Baptiste.pdf" download class="btn btn-outline">
+                            <i class="fas fa-download"></i> Télécharger mon CV
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -362,7 +365,7 @@
                         <!-- Stage 3ème - 2020 -->
                         <div class="timeline-horizontal-item">
                             <div class="timeline-horizontal-content">
-                                <div class="timeline-icon">🔧</div>
+                                <div class="timeline-icon"></div>
                                 <span class="timeline-horizontal-date">Déc 2020</span>
                                 <h3>Stage 3ème</h3>
                                 <p class="timeline-horizontal-location">SYRACOM - Eslettes</p>
@@ -373,7 +376,7 @@
                         <!-- BAC STI2D - 2021-2024 -->
                         <div class="timeline-horizontal-item">
                             <div class="timeline-horizontal-content">
-                                <div class="timeline-icon">🎓</div>
+                                <div class="timeline-icon"></div>
                                 <span class="timeline-horizontal-date">2021 - 2024</span>
                                 <h3>BAC STI2D - SIN</h3>
                                 <p class="timeline-horizontal-location">Lycée Delamare Deboutteville</p>
@@ -384,7 +387,7 @@
                         <!-- Récolte 2022-2023 -->
                         <div class="timeline-horizontal-item">
                             <div class="timeline-horizontal-content">
-                                <div class="timeline-icon">🌾</div>
+                                <div class="timeline-icon"></div>
                                 <span class="timeline-horizontal-date">2022 - 2023</span>
                                 <h3>Récolte céréalière</h3>
                                 <p class="timeline-horizontal-location">Puchay</p>
@@ -395,7 +398,7 @@
                         <!-- Saisonnier 2024 -->
                         <div class="timeline-horizontal-item">
                             <div class="timeline-horizontal-content">
-                                <div class="timeline-icon">🚜</div>
+                                <div class="timeline-icon"></div>
                                 <span class="timeline-horizontal-date">Été 2024</span>
                                 <h3>Saisonnier agricole</h3>
                                 <p class="timeline-horizontal-location">Sévépi 27 - Etrepagny</p>
@@ -406,11 +409,33 @@
                         <!-- SUPINFO - 2024-2029 -->
                         <div class="timeline-horizontal-item">
                             <div class="timeline-horizontal-content">
-                                <div class="timeline-icon">💻</div>
+                                <div class="timeline-icon"></div>
                                 <span class="timeline-horizontal-date">2024 - 2029</span>
                                 <h3>Formation SUPINFO</h3>
                                 <p class="timeline-horizontal-location">SUPINFO Caen</p>
                                 <p>École des experts métiers de l'informatique. Formation complète en développement et systèmes d'information.</p>
+                            </div>
+                        </div>
+
+                        <!-- Stage PIM Ndigital - 2025 -->
+                        <div class="timeline-horizontal-item">
+                            <div class="timeline-horizontal-content">
+                                <div class="timeline-icon"></div>
+                                <span class="timeline-horizontal-date">2025 (3 mois)</span>
+                                <h3>Stage - Développeur Web</h3>
+                                <p class="timeline-horizontal-location">Groupe Niort - Service Ndigital</p>
+                                <p>Création d'un PIM (Product Information Management) pour la gestion centralisée des informations produits.</p>
+                            </div>
+                        </div>
+
+                        <!-- Micro-entreprise -->
+                        <div class="timeline-horizontal-item">
+                            <div class="timeline-horizontal-content">
+                                <div class="timeline-icon"></div>
+                                <span class="timeline-horizontal-date">2025 - Présent</span>
+                                <h3>Micro-entreprise</h3>
+                                <p class="timeline-horizontal-location">Freelance</p>
+                                <p>Création de ma micro-entreprise pour proposer des services de développement web et informatique en freelance.</p>
                             </div>
                         </div>
 
@@ -496,8 +521,8 @@
             const themeToggle = document.getElementById('themeToggle');
             const htmlElement = document.documentElement;
 
-            // Charger le thème sauvegardé
-            const savedTheme = localStorage.getItem('theme') || 'light';
+            // Charger le thème sauvegardé (dark par défaut)
+            const savedTheme = localStorage.getItem('theme') || 'dark';
             htmlElement.setAttribute('data-theme', savedTheme);
             themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 

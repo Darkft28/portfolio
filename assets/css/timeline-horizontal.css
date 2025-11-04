@@ -7,28 +7,18 @@
     position: relative;
     width: 100%;
     padding: var(--spacing-20) 0;
-    overflow-x: auto;
-    overflow-y: visible;
+    overflow: hidden;
     scroll-behavior: smooth;
 }
 
-/* Scrollbar personnalisée moderne */
+/* Masquer complètement la scrollbar */
 .timeline-horizontal-wrapper::-webkit-scrollbar {
-    height: 8px;
+    display: none;
 }
 
-.timeline-horizontal-wrapper::-webkit-scrollbar-track {
-    background: var(--color-bg-secondary);
-    border-radius: var(--radius-full);
-}
-
-.timeline-horizontal-wrapper::-webkit-scrollbar-thumb {
-    background: var(--gradient-accent);
-    border-radius: var(--radius-full);
-}
-
-.timeline-horizontal-wrapper::-webkit-scrollbar-thumb:hover {
-    background: var(--gradient-accent-hover);
+.timeline-horizontal-wrapper {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE et Edge */
 }
 
 /* Container de la timeline */
@@ -100,25 +90,7 @@
 
 /* Icône de l'événement */
 .timeline-icon {
-    width: 64px;
-    height: 64px;
-    background: var(--gradient-accent);
-    border-radius: var(--radius-xl);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.75rem;
-    margin-bottom: var(--spacing-6);
-    box-shadow: var(--shadow-accent);
-    transition: all var(--transition-normal) var(--ease-bounce);
-    position: relative;
-    z-index: 10;
-}
-
-.timeline-horizontal-item:hover .timeline-icon {
-    transform: scale(1.15) rotate(5deg);
-    box-shadow: var(--shadow-accent-lg);
+    display: none;
 }
 
 /* Card de contenu ultra-moderne */

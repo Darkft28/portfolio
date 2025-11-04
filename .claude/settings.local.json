@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(cmd /c \"start index.html\")"
+      "Bash(cmd /c \"start index.html\")",
+      "WebFetch(domain:css-tricks.com)",
+      "WebFetch(domain:blog.logrocket.com)"
     ],
     "deny": [],
     "ask": []
