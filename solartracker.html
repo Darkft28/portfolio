@@ -8,10 +8,32 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/project-pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
 <body>
-    <a href="index.html" class="return-link">← Retour au portfolio</a>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Baptiste Nuytten – Étudiant & Freelance</div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#about">À propos</a></li>
+                    <li><a href="index.html#skills">Compétences</a></li>
+                    <li><a href="index.html#projects">Projets</a></li>
+                    <li><a href="index.html#testimonials">Recommandations</a></li>
+                    <li><a href="index.html#experience">Expérience</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <div class="project-page">
         <div class="project-header-banner">
@@ -34,13 +56,60 @@
                         pour ajuster l'angle du panneau. Un Arduino UNO contrôle le système, en comparant les valeurs de
                         luminosité pour déterminer la direction optimale.</p>
 
-                    <div class="tech-tags" style="margin: 1.5rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <span class="skill-tag">Arduino</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Cablage</span>
-                        <span class="skill-tag">Soudure</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Électronique</span>
+                    <div class="tech-stack">
+                        <div class="tech-stack-track">
+                            <!-- Premier set -->
+                            <div class="skill-tag">
+                                <i class="fas fa-microchip" style="color: #00979D;"></i>
+                                <span class="skill-name">Arduino</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="devicon-git-plain colored"></i>
+                                <span class="skill-name">Git</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="fas fa-plug" style="color: #FFD43B;"></i>
+                                <span class="skill-name">Câblage</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="fas fa-burn" style="color: #FF6B6B;"></i>
+                                <span class="skill-name">Soudure</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="devicon-cplusplus-plain colored"></i>
+                                <span class="skill-name">C++</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="fas fa-bolt" style="color: #FFA500;"></i>
+                                <span class="skill-name">Électronique</span>
+                            </div>
+
+                            <!-- Duplication pour défilement infini -->
+                            <div class="skill-tag">
+                                <i class="fas fa-microchip" style="color: #00979D;"></i>
+                                <span class="skill-name">Arduino</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="devicon-git-plain colored"></i>
+                                <span class="skill-name">Git</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="fas fa-plug" style="color: #FFD43B;"></i>
+                                <span class="skill-name">Câblage</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="fas fa-burn" style="color: #FF6B6B;"></i>
+                                <span class="skill-name">Soudure</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="devicon-cplusplus-plain colored"></i>
+                                <span class="skill-name">C++</span>
+                            </div>
+                            <div class="skill-tag">
+                                <i class="fas fa-bolt" style="color: #FFA500;"></i>
+                                <span class="skill-name">Électronique</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -212,6 +281,47 @@
             <p>Projet développé par Baptiste Nuytten | 2023</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+
+                // Fermer le menu en cliquant sur un lien
+                document.querySelectorAll('.nav-links li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    });
+                });
+            }
+
+            // Theme Toggle avec persistance
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+
+            // Charger le thème sauvegardé (dark par défaut)
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        });
+    </script>
 </body>
 
 </html>

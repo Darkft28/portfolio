@@ -1,0 +1,523 @@
+/* ===================================================================
+   STYLES POUR STRATEGIUM - JEU DE PLATEAU
+   Style cohérent avec le portfolio ultra-moderne
+   ================================================================= */
+
+/* ===================================================================
+   CONTAINER DE DÉMARRAGE
+   ================================================================= */
+.start-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: var(--spacing-12);
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-3xl);
+    box-shadow: var(--shadow-xl);
+    text-align: center;
+}
+
+.game-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-black);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-4);
+    letter-spacing: -0.02em;
+}
+
+.game-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-10);
+    line-height: var(--line-height-relaxed);
+}
+
+/* ===================================================================
+   SÉLECTION DE TAILLE
+   ================================================================= */
+.size-selection {
+    margin: var(--spacing-8) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: center;
+}
+
+.size-selection label {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.size-selection select {
+    width: 200px;
+    padding: var(--spacing-4);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    background: var(--color-bg-secondary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: all var(--transition-base) var(--ease-out);
+}
+
+.size-selection select:hover {
+    border-color: var(--color-accent-start);
+}
+
+.size-selection select:focus {
+    outline: none;
+    border-color: var(--color-accent-start);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* ===================================================================
+   CONTRÔLES DU JEU - BOUTONS
+   ================================================================= */
+.game-controls {
+    display: flex;
+    gap: var(--spacing-4);
+    justify-content: center;
+    margin-top: var(--spacing-8);
+    flex-wrap: wrap;
+}
+
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-4) var(--spacing-8);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal) var(--ease-custom);
+    overflow: hidden;
+    isolation: isolate;
+    font-family: var(--font-family);
+}
+
+.primary-button {
+    background: var(--gradient-accent);
+    color: white;
+    box-shadow: var(--shadow-accent);
+}
+
+.primary-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-accent-hover);
+    opacity: 0;
+    transition: opacity var(--transition-normal) var(--ease-out);
+    z-index: -1;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent-lg);
+}
+
+.primary-button:hover::before {
+    opacity: 1;
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+.secondary-button {
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.secondary-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-bg-secondary);
+    opacity: 0;
+    transition: opacity var(--transition-normal) var(--ease-out);
+    z-index: -1;
+}
+
+.secondary-button:hover {
+    border-color: var(--color-accent-start);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.secondary-button:hover::before {
+    opacity: 1;
+}
+
+.secondary-button:active {
+    transform: translateY(0);
+}
+
+/* ===================================================================
+   CONTAINER DU JEU
+   ================================================================= */
+.game-container {
+    display: none;
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.game-container.active {
+    display: block;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-6);
+    padding: var(--spacing-4);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+}
+
+.player-info {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+/* ===================================================================
+   CANVAS DU JEU
+   ================================================================= */
+.game-canvas-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-3xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-xl);
+}
+
+#gameCanvas {
+    display: block;
+    cursor: pointer;
+    border-radius: var(--radius-lg);
+}
+
+/* ===================================================================
+   EXPLICATIONS DU JEU
+   ================================================================= */
+.game-explanation {
+    margin-top: var(--spacing-8);
+    padding: var(--spacing-8);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+}
+
+.game-explanation h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-4);
+}
+
+.game-explanation p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-3);
+    line-height: var(--line-height-relaxed);
+}
+
+.game-explanation p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===================================================================
+   MODAL - RÈGLES ET FIN DE JEU
+   ================================================================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    z-index: var(--z-modal);
+    padding: var(--spacing-8);
+    overflow-y: auto;
+    animation: fadeIn 0.3s var(--ease-out);
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-3xl);
+    padding: var(--spacing-12);
+    box-shadow: var(--shadow-2xl);
+    animation: slideUp 0.4s var(--ease-custom);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 40px;
+    height: 40px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base) var(--ease-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.close-button:hover {
+    background: var(--gradient-accent);
+    color: white;
+    border-color: transparent;
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-black);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-8);
+    letter-spacing: -0.02em;
+}
+
+/* ===================================================================
+   LISTE DES RÈGLES
+   ================================================================= */
+.rules-list {
+    list-style: none;
+    padding: 0;
+}
+
+.rules-list > li {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-6);
+    padding-left: var(--spacing-8);
+    position: relative;
+}
+
+.rules-list > li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rules-list > li strong {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.rules-list ul {
+    list-style: disc;
+    margin-left: var(--spacing-6);
+    margin-top: var(--spacing-2);
+}
+
+.rules-list ul li {
+    margin-bottom: var(--spacing-2);
+}
+
+/* ===================================================================
+   MESSAGE FIN DE JEU
+   ================================================================= */
+.game-over-message {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+}
+
+.winner-text {
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-4);
+}
+
+.winner-text span {
+    font-weight: var(--font-weight-bold);
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4);
+}
+
+/* ===================================================================
+   NOTE DE CRÉDIT
+   ================================================================= */
+.credit-note {
+    margin-top: var(--spacing-8);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    font-style: italic;
+}
+
+/* ===================================================================
+   DÉTAILS DU JEU
+   ================================================================= */
+.game-details {
+    margin-top: var(--spacing-16);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-details h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-top: var(--spacing-10);
+    margin-bottom: var(--spacing-4);
+    letter-spacing: -0.01em;
+}
+
+.game-details p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-4);
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN
+   ================================================================= */
+@media (max-width: 767px) {
+    .start-container {
+        padding: var(--spacing-8);
+    }
+
+    .game-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .game-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .game-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .game-header {
+        flex-direction: column;
+        gap: var(--spacing-4);
+        text-align: center;
+    }
+
+    .game-canvas-container {
+        padding: var(--spacing-4);
+    }
+
+    #gameCanvas {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .modal-content {
+        padding: var(--spacing-8);
+        margin: var(--spacing-4);
+    }
+
+    .modal-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .rules-list > li {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 575px) {
+    .game-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .size-selection select {
+        width: 100%;
+    }
+
+    .modal-content {
+        padding: var(--spacing-6);
+    }
+}
+
+/* ===================================================================
+   ANIMATIONS
+   ================================================================= */
+@media (prefers-reduced-motion: reduce) {
+    .modal,
+    .modal-content,
+    .button {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===================================================================
+   FIN DES STYLES STRATEGIUM
+   ================================================================= */

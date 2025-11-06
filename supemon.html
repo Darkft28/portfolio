@@ -6,18 +6,41 @@
     <title>Supemon - Jeu Pokémon en CLI | Portfolio Baptiste Nuytten</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/project-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
-    <a href="index.html" class="return-link">← Retour au portfolio</a>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Baptiste Nuytten – Étudiant & Freelance</div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#about">À propos</a></li>
+                    <li><a href="index.html#skills">Compétences</a></li>
+                    <li><a href="index.html#projects">Projets</a></li>
+                    <li><a href="index.html#testimonials">Recommandations</a></li>
+                    <li><a href="index.html#experience">Expérience</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     
-    <div class="game-page">
-        <div class="game-header-banner">
+    <div class="project-page">
+        <div class="project-header-banner">
             <h1>Supemon</h1>
             <p>Un jeu Pokémon fonctionnel développé en C, avec interface en ligne de commande (CLI)</p>
         </div>
         
         <div class="container">
-            <section class="game-intro" style="margin-top: 2rem;">
+            <section class="project-intro" style="margin-top: 2rem;">
                 <h2>Présentation du jeu</h2>
                 <p>Supemon est un jeu de type Pokémon développé en C, avec une interface en ligne de commande (CLI). 
                 Le jeu intègre toutes les mécaniques essentielles d'un jeu Pokémon : combats au tour par tour, 
@@ -138,5 +161,46 @@
             <p>Développé par Baptiste Nuytten | Jeu Supemon inspiré de la franchise Pokémon</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+
+                // Fermer le menu en cliquant sur un lien
+                document.querySelectorAll('.nav-links li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    });
+                });
+            }
+
+            // Theme Toggle avec persistance
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+
+            // Charger le thème sauvegardé (dark par défaut)
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        });
+    </script>
 </body>
 </html>

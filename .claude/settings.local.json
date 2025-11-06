@@ -4,7 +4,9 @@
       "WebSearch",
       "Bash(cmd /c \"start index.html\")",
       "WebFetch(domain:css-tricks.com)",
-      "WebFetch(domain:blog.logrocket.com)"
+      "WebFetch(domain:blog.logrocket.com)",
+      "Bash(start autoGarden.html)",
+      "Bash(cmd /c \"start autoGarden.html\")"
     ],
     "deny": [],
     "ask": []

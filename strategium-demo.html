@@ -7,71 +7,35 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/project-pages.css">
     <link rel="stylesheet" href="assets/css/strategium.css">
-    <style>
-        /* Styles spécifiques au jeu Strategium */
-        .return-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
-        }
-        
-        .return-link:hover {
-            background-color: var(--accent);
-        }
-        
-        .game-page {
-            min-height: 100vh;
-            background-color: var(--light);
-            margin-top: 0; /* Supprime les marges en haut */
-            padding-top: 0; /* Supprime le padding en haut */
-        }
-        
-        .game-header-banner {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 0 2rem;
-            text-align: center;
-            margin: 0; /* Supprime les marges */
-            margin-bottom: 2rem;
-        }
-        
-        .game-header-banner h1 {
-            color: white;
-            margin-bottom: 1rem;
-            padding-top: 1rem; /* Ajoute un peu d'espace en haut du titre */
-        }
-        
-        .game-header-banner p {
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        .credits {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: var(--text);
-            opacity: 0.8;
-        }
-
-        /* Assurez-vous que les conteneurs s'adaptent bien */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
-    <a href="index.html" class="return-link">← Retour au portfolio</a>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Baptiste Nuytten – Étudiant & Freelance</div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#about">À propos</a></li>
+                    <li><a href="index.html#skills">Compétences</a></li>
+                    <li><a href="index.html#projects">Projets</a></li>
+                    <li><a href="index.html#testimonials">Recommandations</a></li>
+                    <li><a href="index.html#experience">Expérience</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     
-    <div class="game-page">
-        <div class="game-header-banner">
+    <div class="project-page">
+        <div class="project-header-banner">
             <h1>Strategium</h1>
             <p>Un jeu de plateau stratégique inspiré des échecs, développé en Python et adapté pour le web</p>
         </div>
@@ -190,6 +154,107 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+
+                // Fermer le menu en cliquant sur un lien
+                document.querySelectorAll('.nav-links li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    });
+                });
+            }
+
+            // Theme Toggle avec persistance
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+
+            // Charger le thème sauvegardé (dark par défaut)
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+
+            // Gestion des modals Strategium
+            const rulesButton = document.getElementById('rulesButton');
+            const rulesModal = document.getElementById('rulesModal');
+            const closeRules = document.getElementById('closeRules');
+            const gameOverModal = document.getElementById('gameOverModal');
+            const closeModal = document.getElementById('closeModal');
+
+            // Ouvrir modal règles
+            if (rulesButton && rulesModal) {
+                rulesButton.addEventListener('click', () => {
+                    rulesModal.classList.add('active');
+                });
+            }
+
+            // Fermer modal règles
+            if (closeRules && rulesModal) {
+                closeRules.addEventListener('click', () => {
+                    rulesModal.classList.remove('active');
+                });
+
+                rulesModal.addEventListener('click', (e) => {
+                    if (e.target === rulesModal) {
+                        rulesModal.classList.remove('active');
+                    }
+                });
+            }
+
+            // Fermer modal game over
+            if (closeModal && gameOverModal) {
+                closeModal.addEventListener('click', () => {
+                    gameOverModal.classList.remove('active');
+                });
+
+                gameOverModal.addEventListener('click', (e) => {
+                    if (e.target === gameOverModal) {
+                        gameOverModal.classList.remove('active');
+                    }
+                });
+            }
+
+            // Bouton commencer la partie
+            const startButton = document.getElementById('startButton');
+            const startContainer = document.getElementById('startContainer');
+            const gameContainer = document.getElementById('gameContainer');
+
+            if (startButton && startContainer && gameContainer) {
+                startButton.addEventListener('click', () => {
+                    startContainer.style.display = 'none';
+                    gameContainer.classList.add('active');
+                });
+            }
+
+            // Bouton réinitialiser
+            const resetButton = document.getElementById('resetButton');
+            if (resetButton) {
+                resetButton.addEventListener('click', () => {
+                    gameContainer.classList.remove('active');
+                    startContainer.style.display = 'block';
+                });
+            }
+        });
+    </script>
     <script src="assets/js/strategium.js"></script>
 </body>
 </html>

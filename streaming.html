@@ -6,9 +6,32 @@
     <title>FilmShop - Plateforme de Streaming | Portfolio Baptiste Nuytten</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/project-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
-    <a href="index.html" class="return-link">← Retour au portfolio</a>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Baptiste Nuytten – Étudiant & Freelance</div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#about">À propos</a></li>
+                    <li><a href="index.html#skills">Compétences</a></li>
+                    <li><a href="index.html#projects">Projets</a></li>
+                    <li><a href="index.html#testimonials">Recommandations</a></li>
+                    <li><a href="index.html#experience">Expérience</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     
     <div class="project-page">
         <div class="project-header-banner">
@@ -24,20 +47,78 @@
                 pour récupérer les informations des films (titres, descriptions, affiches, etc.) et les stocke dans une base de données MySQL.</p>
                 
                 <div class="tech-stack">
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">API TMDB</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag"></span>
+                    <div class="tech-stack-track">
+                        <!-- Premier set -->
+                        <div class="skill-tag">
+                            <i class="devicon-php-plain colored"></i>
+                            <span class="skill-name">PHP</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-mysql-plain colored"></i>
+                            <span class="skill-name">MySQL</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-html5-plain colored"></i>
+                            <span class="skill-name">HTML</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-css3-plain colored"></i>
+                            <span class="skill-name">CSS</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-film" style="color: #01D277;"></i>
+                            <span class="skill-name">API TMDB</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-docker-plain colored"></i>
+                            <span class="skill-name">Docker</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-git-plain colored"></i>
+                            <span class="skill-name">Git</span>
+                        </div>
+
+                        <!-- Duplication pour défilement infini -->
+                        <div class="skill-tag">
+                            <i class="devicon-php-plain colored"></i>
+                            <span class="skill-name">PHP</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-mysql-plain colored"></i>
+                            <span class="skill-name">MySQL</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-html5-plain colored"></i>
+                            <span class="skill-name">HTML</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-css3-plain colored"></i>
+                            <span class="skill-name">CSS</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-film" style="color: #01D277;"></i>
+                            <span class="skill-name">API TMDB</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-docker-plain colored"></i>
+                            <span class="skill-name">Docker</span>
+                        </div>
+                        <div class="skill-tag">
+                            <i class="devicon-git-plain colored"></i>
+                            <span class="skill-name">Git</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="project-code-link" style="text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
-                    <a href="#" class="btn" target="_blank">Voir le code source sur GitHub</a>
-                </div>
+                <!-- Projet privé - pas de lien GitHub public -->
             </section>
             
             <section class="screenshots">
@@ -198,5 +279,46 @@
             <p>Développé par Baptiste Nuytten | Projet éducatif utilisant l'API TMDB</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+
+                // Fermer le menu en cliquant sur un lien
+                document.querySelectorAll('.nav-links li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    });
+                });
+            }
+
+            // Theme Toggle avec persistance
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+
+            // Charger le thème sauvegardé (dark par défaut)
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        });
+    </script>
 </body>
 </html>
