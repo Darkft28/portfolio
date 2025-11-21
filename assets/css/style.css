@@ -597,9 +597,11 @@ nav {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
     animation:
-        typing 2.5s steps(17, end) 0.5s 1 normal both,
+        typing 2.5s steps(16, end) 0.5s 1 normal both,
         blink-caret 0.75s step-end infinite;
     padding-right: 4px;
+    display: inline-block;
+    letter-spacing: 0;
 }
 
 @keyframes typing {
@@ -607,7 +609,7 @@ nav {
         width: 0;
     }
     to {
-        width: 100%;
+        width: 16ch;
     }
 }
 
