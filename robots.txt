@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://baptistenuytten.fr/sitemap.xml
+
+# Disallow admin or private directories if any
+# Disallow: /admin/
+# Disallow: /private/

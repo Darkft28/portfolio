@@ -411,6 +411,8 @@ nav {
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.02em;
     transition: all var(--transition-base) var(--ease-out);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .logo:hover {
