@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,7 @@
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="portfolio/index.html">Portfolio</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button></li>
                 </ul>
             </nav>
         </div>
@@ -188,6 +189,7 @@
             <div class="footer-content">
                 <p>&copy; 2025 Baptiste Nuytten. Tous droits réservés.</p>
                 <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions Légales</a>
                     <a href="cgv.html">CGV</a>
                 </div>
             </div>
@@ -195,23 +197,43 @@
     </footer>
 
     <script>
-        // Menu hamburger
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
 
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            });
-
-            document.querySelectorAll('.nav-links li a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    hamburger.classList.remove('active');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
                 });
+
+                document.querySelectorAll('.nav-links li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    });
+                });
+            }
+
+            // Theme Toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+
+            // Charger le thème sauvegardé (dark par défaut)
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
             });
-        }
+        });
     </script>
 </body>
 </html>
