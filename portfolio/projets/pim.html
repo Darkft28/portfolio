@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Système PIM - Product Information Management | Portfolio Baptiste Nuytten</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/project-pages.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/project-pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
@@ -20,13 +20,21 @@
                     <span></span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="index.html#about">À propos</a></li>
-                    <li><a href="index.html#skills">Compétences</a></li>
-                    <li><a href="index.html#projects">Projets</a></li>
-                    <li><a href="index.html#testimonials">Recommandations</a></li>
-                    <li><a href="index.html#experience">Expérience</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="../../index.html">Services Freelance</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html">
+                            Portfolio
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="../index.html#about">À propos</a>
+                            <a href="../index.html#skills">Compétences</a>
+                            <a href="../index.html#projects">Projets</a>
+                            <a href="../index.html#testimonials">Recommandations</a>
+                            <a href="../index.html#experience">Expérience</a>
+                        </div>
+                    </li>
+                    <li><a href="../index.html#contact">Contact</a></li>
                     <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
                 </ul>
             </nav>
@@ -124,7 +132,7 @@
                 <div class="screenshot-container">
                     <!-- Import Excel -->
                     <div class="screenshot-card">
-                        <img src="assets/img/pim-4bus/pimWlcm.png" alt="Import Excel dans le système PIM" class="screenshot-img">
+                        <img src="../../assets/img/pim-4bus/pimWlcm.png" alt="Import Excel dans le système PIM" class="screenshot-img">
                         <div class="screenshot-content">
                             <h3 class="screenshot-title">Import de données Excel</h3>
                             <p class="screenshot-desc">Interface d'importation permettant de télécharger un template Excel standardisé et d'importer des données produits en masse. Le système effectue un mapping automatique des colonnes et valide les données avant insertion dans la base. L'export complet permet également de récupérer toutes les données au format Excel.</p>
@@ -133,7 +141,7 @@
                     
                     <!-- Consultation -->
                     <div class="screenshot-card">
-                        <img src="assets/img/pim-4bus/compteur.png" alt="Consultation des données PIM" class="screenshot-img">
+                        <img src="../../assets/img/pim-4bus/compteur.png" alt="Consultation des données PIM" class="screenshot-img">
                         <div class="screenshot-content">
                             <h3 class="screenshot-title">Consultation simplifiée</h3>
                             <p class="screenshot-desc">Vue d'ensemble des statistiques clés du système : références actives/inactives, catégories, acteurs, contrats et équivalences. Cette interface offre des filtres de recherche avancés permettant de filtrer par référence active, catégorie, sous-catégorie, plateforme, qualité, trigramme, acteur, type d'acteur, contrat et client.</p>
@@ -142,7 +150,7 @@
                     
                     <!-- Tableau de données -->
                     <div class="screenshot-card">
-                        <img src="assets/img/pim-4bus/tab.png" alt="Tableau des produits" class="screenshot-img">
+                        <img src="../../assets/img/pim-4bus/tab.png" alt="Tableau des produits" class="screenshot-img">
                         <div class="screenshot-content">
                             <h3 class="screenshot-title">Affichage des produits</h3>
                             <p class="screenshot-desc">Tableau détaillé présentant l'ensemble des références produits avec pagination. Chaque ligne affiche le code machine, la désignation, la marque, la catégorie, la qualité, le fournisseur avec trigramme, la référence externe, le prix unitaire net, la plateforme, le statut de la référence et le contrat associé. Des actions d'édition et de suppression sont disponibles pour chaque référence.</p>
@@ -151,7 +159,7 @@
                     
                     <!-- Administration -->
                     <div class="screenshot-card">
-                        <img src="assets/img/pim-4bus/adminref.png" alt="Administration des référentiels" class="screenshot-img">
+                        <img src="../../assets/img/pim-4bus/adminref.png" alt="Administration des référentiels" class="screenshot-img">
                         <div class="screenshot-content">
                             <h3 class="screenshot-title">Administration des référentiels</h3>
                             <p class="screenshot-desc">Interface d'administration permettant de gérer les données de référence : catégories, plateformes, qualités, acteurs (274 actifs), contrats et fournisseurs (48 actifs). Chaque référentiel dispose d'un compteur et permet l'ajout, la modification et la suppression d'éléments avec gestion du statut actif/inactif.</p>
@@ -160,7 +168,7 @@
                     
                     <!-- Équivalences -->
                     <div class="screenshot-card">
-                        <img src="assets/img/pim-4bus/refequi.png" alt="Gestion des équivalences" class="screenshot-img">
+                        <img src="../../assets/img/pim-4bus/refequi.png" alt="Gestion des équivalences" class="screenshot-img">
                         <div class="screenshot-content">
                             <h3 class="screenshot-title">Références équivalentes</h3>
                             <p class="screenshot-desc">Module de gestion des références équivalentes permettant d'associer plusieurs références d'acteurs différents pour un même produit. Le tableau affiche l'acteur, la désignation, la référence équivalente, la qualité, la marque, le statut et la référence de remplacement. Cette fonctionnalité est essentielle pour gérer les produits multi-fournisseurs.</p>
@@ -169,7 +177,7 @@
                     
                     <!-- Ajout de référence -->
                     <div class="screenshot-card">
-                        <img src="assets/img/pim-4bus/addref.png" alt="Ajout d'une nouvelle référence" class="screenshot-img">
+                        <img src="../../assets/img/pim-4bus/addref.png" alt="Ajout d'une nouvelle référence" class="screenshot-img">
                         <div class="screenshot-content">
                             <h3 class="screenshot-title">Ajout de référence</h3>
                             <p class="screenshot-desc">Formulaire complet d'ajout de nouvelle référence produit avec tous les champs nécessaires : code machine, marque, désignation, catégorie, sous-catégorie, qualité, dimensions (poids, longueur, largeur, hauteur), statut, et URL des photos. L'interface intuitive guide l'utilisateur dans la saisie de toutes les informations produit.</p>

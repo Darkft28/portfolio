@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategium - Démonstration | Portfolio Baptiste Nuytten</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/project-pages.css">
+    <link rel="stylesheet" href="../../assets/css/strategium.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Baptiste Nuytten – Étudiant & Freelance</div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../../index.html">Services Freelance</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html">
+                            Portfolio
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="../index.html#about">À propos</a>
+                            <a href="../index.html#skills">Compétences</a>
+                            <a href="../index.html#projects">Projets</a>
+                            <a href="../index.html#testimonials">Recommandations</a>
+                            <a href="../index.html#experience">Expérience</a>
+                        </div>
+                    </li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="project-page">
+        <div class="project-header-banner">
+            <h1>Strategium</h1>
+            <p>Un jeu de plateau stratégique inspiré des échecs, développé en Python et adapté pour le web</p>
+        </div>
+        
+        <div class="container">
+            <div id="startContainer" class="start-container">
+                <h3 class="game-title">Jouer à Strategium</h3>
+                <p class="game-subtitle">Affrontez un adversaire sur un plateau dynamique avec une mécanique unique de capture</p>
+                
+                <div class="size-selection">
+                    <label for="sizeSelector">Taille du plateau :</label>
+                    <select id="sizeSelector">
+                        <option value="4">4x4</option>
+                        <option value="6">6x6</option>
+                        <option value="8" selected>8x8</option>
+                        <option value="10">10x10</option>
+                        <option value="12">12x12</option>
+                    </select>
+                </div>
+                
+                <div class="game-controls">
+                    <button id="rulesButton" class="button secondary-button">Règles du jeu</button>
+                    <button id="startButton" class="button primary-button">Commencer la partie</button>
+                </div>
+                
+                <p class="credit-note" style="margin-top: 2rem; font-size: 0.9rem; color: #64748b;">
+                    Note : Cette version web a été adaptée par une IA à partir de mon code Python original.
+                </p>
+            </div>
+            
+            <div id="gameContainer" class="game-container">
+                <div class="game-header">
+                    <div id="playerLabel" class="player-info">Joueur 1</div>
+                    <button id="resetButton" class="button secondary-button">Réinitialiser</button>
+                </div>
+                
+                <div class="game-canvas-container">
+                    <canvas id="gameCanvas" width="600" height="600"></canvas>
+                </div>
+                
+                <div class="game-explanation" style="margin-top: 1.5rem;">
+                    <h3>Comment jouer :</h3>
+                    <p>1. Cliquez sur une de vos pièces pour la sélectionner (bleu pour joueur 1, rouge pour joueur 2).</p>
+                    <p>2. Les mouvements possibles seront mis en évidence en bleu clair.</p>
+                    <p>3. Cliquez sur une case valide pour déplacer votre pièce.</p>
+                    <p>4. Utilisez vos tours pour capturer les pions adverses en formant des rectangles avec votre reine.</p>
+                </div>
+            </div>
+            
+            <!-- Modal des règles -->
+            <div id="rulesModal" class="modal">
+                <div class="modal-content">
+                    <button id="closeRules" class="close-button">&times;</button>
+                    <h2 class="modal-title">Règles du jeu Strategium</h2>
+                    <ul class="rules-list">
+                        <li><strong>Objectif :</strong> Capturer toutes les pièces adverses jusqu'à ce qu'il n'en reste qu'une ou moins.</li>
+                        <li><strong>Plateau :</strong> Le jeu se joue sur un plateau carré de taille variable (4x4 à 12x12).</li>
+                        <li><strong>Pièces :</strong> Chaque joueur possède une reine (pièce forte) et plusieurs pions (pièces ordinaires).</li>
+                        <li><strong>Déplacements :</strong>
+                            <ul>
+                                <li>La reine peut se déplacer en ligne droite ou en diagonale, comme la dame aux échecs.</li>
+                                <li>Les pions peuvent se déplacer en ligne droite (horizontalement ou verticalement), comme la tour aux échecs.</li>
+                                <li>Les pièces ne peuvent pas sauter par-dessus d'autres pièces.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Capture par rectangle :</strong> 
+                            <ul>
+                                <li>Si un de vos pions n'est ni sur la même ligne ni sur la même colonne que votre reine, ils forment deux coins d'un rectangle.</li>
+                                <li>Si des pions adverses se trouvent aux autres coins de ce rectangle, ils sont automatiquement capturés.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tour par tour :</strong> Les joueurs jouent à tour de rôle, en déplaçant une seule pièce par tour.</li>
+                        <li><strong>Victoire :</strong> Le premier joueur qui réduit l'adversaire à une pièce ou moins remporte la partie.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Modal fin de jeu -->
+            <div id="gameOverModal" class="modal">
+                <div class="modal-content">
+                    <button id="closeModal" class="close-button">&times;</button>
+                    <div class="game-over-message">
+                        <h2 class="modal-title">Partie terminée !</h2>
+                        <p class="winner-text">Le Joueur <span id="winner"></span> a gagné !</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="playAgain" class="button primary-button">Rejouer</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-code-link" style="text-align: center; margin-top: 2rem;">
+                <a href="https://github.com/Darkft28/Strategium" class="btn" target="_blank">Voir le code source sur GitHub</a>
+            </div>
+            
+            <div class="game-details" style="margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h3>À propos du jeu</h3>
+                <p>Strategium est un jeu de plateau stratégique que j'ai développé en Python avec la bibliothèque Tkinter. Le concept du jeu combine des éléments d'échecs avec une mécanique de capture unique basée sur la formation de rectangles.</p>
+                
+                <h3>Développement</h3>
+                <p>Le développement de ce jeu m'a permis d'appliquer plusieurs concepts de programmation :</p>
+                <ul>
+                    <li>Programmation orientée objet en Python</li>
+                    <li>Gestion d'interfaces graphiques avec Tkinter</li>
+                    <li>Conception d'algorithmes pour les mouvements et captures</li>
+                    <li>Mise en œuvre de tests pour garantir le bon fonctionnement du jeu</li>
+                </ul>
+                
+                <h3>Version web</h3>
+                <p>Cette version web du jeu a été adaptée à partir de mon code Python original pour permettre aux visiteurs de mon portfolio de tester le jeu directement dans leur navigateur sans avoir à installer Python.</p>
+            </div>
+        </div>
+        
+        <div class="credits">
+            <p>Développé par Baptiste Nuytten | Version web adaptée par IA à partir du code Python original</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu hamburger
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+
+                // Fermer le menu en cliquant sur un lien
+                document.querySelectorAll('.nav-links li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    });
+                });
+            }
+
+            // Theme Toggle avec persistance
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+
+            // Charger le thème sauvegardé (dark par défaut)
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+
+            // Gestion des modals Strategium
+            const rulesButton = document.getElementById('rulesButton');
+            const rulesModal = document.getElementById('rulesModal');
+            const closeRules = document.getElementById('closeRules');
+            const gameOverModal = document.getElementById('gameOverModal');
+            const closeModal = document.getElementById('closeModal');
+
+            // Ouvrir modal règles
+            if (rulesButton && rulesModal) {
+                rulesButton.addEventListener('click', () => {
+                    rulesModal.classList.add('active');
+                });
+            }
+
+            // Fermer modal règles
+            if (closeRules && rulesModal) {
+                closeRules.addEventListener('click', () => {
+                    rulesModal.classList.remove('active');
+                });
+
+                rulesModal.addEventListener('click', (e) => {
+                    if (e.target === rulesModal) {
+                        rulesModal.classList.remove('active');
+                    }
+                });
+            }
+
+            // Fermer modal game over
+            if (closeModal && gameOverModal) {
+                closeModal.addEventListener('click', () => {
+                    gameOverModal.classList.remove('active');
+                });
+
+                gameOverModal.addEventListener('click', (e) => {
+                    if (e.target === gameOverModal) {
+                        gameOverModal.classList.remove('active');
+                    }
+                });
+            }
+
+            // Bouton commencer la partie
+            const startButton = document.getElementById('startButton');
+            const startContainer = document.getElementById('startContainer');
+            const gameContainer = document.getElementById('gameContainer');
+
+            if (startButton && startContainer && gameContainer) {
+                startButton.addEventListener('click', () => {
+                    startContainer.style.display = 'none';
+                    gameContainer.classList.add('active');
+                });
+            }
+
+            // Bouton réinitialiser
+            const resetButton = document.getElementById('resetButton');
+            if (resetButton) {
+                resetButton.addEventListener('click', () => {
+                    gameContainer.classList.remove('active');
+                    startContainer.style.display = 'block';
+                });
+            }
+        });
+    </script>
+    <script src="../../assets/js/strategium.js"></script>
+</body>
+</html>

@@ -29,10 +29,10 @@
 
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-Uf7K5oJUxSmkhnbhshank.js"></script> <script> window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}}; plausible.init() </script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/scroll-animations.css">
-    <link rel="stylesheet" href="assets/css/carousel-3d.css">
-    <link rel="stylesheet" href="assets/css/timeline-horizontal.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/scroll-animations.css">
+    <link rel="stylesheet" href="../assets/css/carousel-3d.css">
+    <link rel="stylesheet" href="../assets/css/timeline-horizontal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
@@ -40,19 +40,27 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">Baptiste Nuytten – Étudiant & Freelance</a>
+                <a href="../index.html" class="logo">Baptiste Nuytten – Étudiant & Freelance</a>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">Services Freelance</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#projects">Projets</a></li>
-                    <li><a href="#testimonials">Recommandations</a></li>
-                    <li><a href="#experience">Expérience</a></li>
+                    <li><a href="../index.html">Services Freelance</a></li>
+                    <li class="dropdown">
+                        <a href="index.html">
+                            Portfolio
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#about">À propos</a>
+                            <a href="#skills">Compétences</a>
+                            <a href="#projects">Projets</a>
+                            <a href="#testimonials">Recommandations</a>
+                            <a href="#experience">Expérience</a>
+                        </div>
+                    </li>
                     <li><a href="#contact">Contact</a></li>
                     <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button></li>
                 </ul>
@@ -69,13 +77,13 @@
                     <div class="hero-buttons">
                         <a href="#projects" class="btn">Voir mes projets</a>
                         <a href="#contact" class="btn btn-secondary">Me contacter</a>
-                        <a href="download/CV_Nuytten_Baptiste.pdf" download class="btn btn-outline">
+                        <a href="../download/CV_Nuytten_Baptiste.pdf" download class="btn btn-outline">
                             <i class="fas fa-download"></i> Télécharger mon CV
                         </a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/img/baptiste.jpg" alt="Photo de profil" class="avatar">
+                    <img src="../assets/img/baptiste.jpg" alt="Photo de profil" class="avatar">
                 </div>
             </div>
         </div>
@@ -296,7 +304,7 @@
             <div class="carousel-wrapper">
                 <div class="carousel-track">
                 <div class="project-card" data-project-index="0">
-                    <img src="assets/img/pim-4bus/pimWlcm.png" alt="Système PIM" class="project-img">
+                    <img src="../assets/img/pim-4bus/pimWlcm.png" alt="Système PIM" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Système PIM</h3>
                         <p>Application web professionnelle de gestion centralisée des informations produits. Import Excel, filtres avancés, gestion des équivalences et administration complète des référentiels pour optimiser la gestion de catalogues produits.</p>
@@ -309,13 +317,13 @@
                             <span class="project-tag">Bootstrap</span>
                         </div>
                         <div class="project-links">
-                            <a href="pim.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                            <a href="projets/pim.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-project-index="1">
-                    <img src="assets/img/FilmShop.png" alt="Projet 4" class="project-img">
+                    <img src="../assets/img/FilmShop.png" alt="Projet 4" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Site de streaming</h3>
                         <p>Un site de streaming permettant l'inscription, la connexion, l'ajout au panier et la récupération des films depuis l'API TMDB pour les stocker dans une base de données MySQL, gérée via phpMyAdmin.</p>
@@ -329,13 +337,13 @@
                             <span class="project-tag">Docker</span>
                         </div>
                         <div class="project-links">
-                            <a href="streaming.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                            <a href="projets/streaming.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-project-index="2">
-                    <img src="assets/img/Strategium.png" alt="Projet 1" class="project-img">
+                    <img src="../assets/img/Strategium.png" alt="Projet 1" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Jeu de plateau Strategium</h3>
                         <p>Deux joueurs s'affrontent pour capturer les pièces adverses sur un plateau dynamique. Le jeu mélange des règles inspirées des échecs ♟️ avec une mécanique unique de capture.</p>
@@ -346,14 +354,14 @@
                             <span class="project-tag">Git</span>
                         </div>
                         <div class="project-links">
-                            <a href="strategium-demo.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                            <a href="projets/strategium-demo.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
                             <a href="https://github.com/Darkft28/Strategium" class="project-link">GitHub <i class="fab fa-github"></i> </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-project-index="3">
-                    <img src="assets/img/arduino/finalProject.jpg" alt="Projet 2" class="project-img">
+                    <img src="../assets/img/arduino/finalProject.jpg" alt="Projet 2" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Tracker Solaire</h3>
                         <p>Un projet Arduino conçu pour suivre la position du soleil et maximiser l'exposition solaire. Ce tracker solaire utilise des photoresistances pour ajuster automatiquement l'orientation d'un panneau solaire, optimisant ainsi la collecte d'énergie.</p>
@@ -365,13 +373,13 @@
                             <span class="project-tag">Git</span>
                         </div>
                         <div class="project-links">
-                            <a href="solartracker.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                            <a href="projets/solartracker.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-project-index="4">
-                    <img src="assets/img/Supemon.png" alt="Projet 3" class="project-img">
+                    <img src="../assets/img/Supemon.png" alt="Projet 3" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Jeu Pokémon en CLI</h3>
                         <p>Un jeu Pokémon fonctionnel développé en C, intégrant un système de sauvegarde, de capture, de gain d'expérience et de gestion des attaques. Ce projet met en œuvre des mécaniques de jeu captivantes pour une expérience immersive.</p>
@@ -382,14 +390,14 @@
                             <span class="project-tag">CLI</span>
                         </div>
                         <div class="project-links">
-                            <a href="supemon.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                            <a href="projets/supemon.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
                             <a href="https://github.com/Darkft28/Supemon" class="project-link">GitHub <i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-project-index="5">
-                    <img src="assets/img/autoGarden/Microbit.png" alt="Projet Jardin Automatique" class="project-img">
+                    <img src="../assets/img/autoGarden/Microbit.png" alt="Projet Jardin Automatique" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Jardin Automatique</h3>
                         <p>Un système automatisé utilisant une carte Arduino pour arroser un jardin en fonction de l'humidité du sol. Le projet intègre une pompe à eau et des capteurs d'humidité placés directement dans le sol pour un arrosage optimal.</p>
@@ -401,7 +409,7 @@
                             <span class="project-tag">Git</span>
                         </div>
                         <div class="project-links">
-                            <a href="autoGarden.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
+                            <a href="projets/autoGarden.html" class="project-link">Demo <i class="fa-solid fa-play"></i></a>
                         </div>
                     </div>
                 </div>
@@ -436,7 +444,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="assets/img/avis/Jean-Philippe_Casoni.png" alt="Jean-Philippe Casoni" class="testimonial-avatar">
+                        <img src="../assets/img/avis/Jean-Philippe_Casoni.png" alt="Jean-Philippe Casoni" class="testimonial-avatar">
                         <div class="testimonial-info">
                             <h3 class="testimonial-name">
                                 Jean-Philippe Casoni
@@ -686,8 +694,8 @@
             });
         });
     </script>
-    <script src="assets/js/scroll-animations.js"></script>
-    <script src="assets/js/carousel-3d.js"></script>
-    <script src="assets/js/timeline-horizontal.js"></script>
+    <script src="../assets/js/scroll-animations.js"></script>
+    <script src="../assets/js/carousel-3d.js"></script>
+    <script src="../assets/js/timeline-horizontal.js"></script>
 </body>
 </html>
