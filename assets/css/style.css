@@ -1779,43 +1779,18 @@ footer {
         font-size: var(--font-size-xl);
     }
 
-    /* Menu déroulant sur mobile - désactiver le hover */
-    .nav-links .dropdown:hover .dropdown-menu {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-50%) translateY(10px);
-    }
-
-    /* Utiliser la classe .dropdown-open à la place */
-    .nav-links .dropdown.dropdown-open .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-50%) translateY(0);
-        position: relative;
-        transform: none;
-        margin-top: var(--spacing-4);
+    /* Menu déroulant sur mobile - complètement désactivé */
+    .nav-links .dropdown-menu {
+        display: none !important;
     }
 
     .nav-links .dropdown-icon {
-        transition: transform var(--transition-base);
-        cursor: pointer;
-        padding: var(--spacing-2);
-        margin-left: var(--spacing-1);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        display: none !important;
     }
 
-    .nav-links .dropdown.dropdown-open .dropdown-icon {
-        transform: rotate(180deg);
-    }
-
-    /* Améliorer la zone de clic de l'icône sur mobile */
+    /* Sur mobile, Portfolio est un lien simple */
     .nav-links .dropdown > a {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
+        pointer-events: all;
     }
 
     /* Hero mobile */
