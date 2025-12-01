@@ -1666,9 +1666,95 @@ footer {
     background: var(--color-bg-tertiary);
 }
 
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
 .footer-content p {
     font-size: var(--font-size-sm);
     margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--spacing-6);
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-accent-start);
+}
+
+.footer-links a:not(:last-child)::after {
+    content: '•';
+    margin-left: var(--spacing-6);
+    color: var(--color-text-tertiary);
+}
+
+/* ===================================================================
+   PAGES LEGALES (CGV, MENTIONS LEGALES)
+   ================================================================= */
+.legal-section {
+    background: var(--color-bg-primary);
+    min-height: 100vh;
+}
+
+.legal-content {
+    line-height: var(--line-height-relaxed);
+}
+
+.legal-content h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-top: var(--spacing-12);
+    margin-bottom: var(--spacing-6);
+    padding-top: var(--spacing-8);
+    border-top: 2px solid var(--color-border);
+}
+
+.legal-content h2:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.legal-content h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-top: var(--spacing-8);
+    margin-bottom: var(--spacing-4);
+}
+
+.legal-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-5);
+}
+
+.legal-content ul {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-5);
+    padding-left: var(--spacing-8);
+}
+
+.legal-content li {
+    margin-bottom: var(--spacing-3);
+}
+
+.legal-content strong {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-semibold);
 }
 
 /* ===================================================================
