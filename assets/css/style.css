@@ -1798,10 +1798,24 @@ footer {
 
     .nav-links .dropdown-icon {
         transition: transform var(--transition-base);
+        cursor: pointer;
+        padding: var(--spacing-2);
+        margin-left: var(--spacing-1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav-links .dropdown.dropdown-open .dropdown-icon {
         transform: rotate(180deg);
+    }
+
+    /* Améliorer la zone de clic de l'icône sur mobile */
+    .nav-links .dropdown > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
     }
 
     /* Hero mobile */
