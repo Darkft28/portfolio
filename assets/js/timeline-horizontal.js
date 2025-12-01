@@ -40,21 +40,4 @@ document.addEventListener('DOMContentLoaded', function() {
     timelineItems.forEach((item) => {
         observer.observe(item);
     });
-
-    // Scroll horizontal fluide avec la molette (optionnel)
-    if (timelineWrapper) {
-        timelineWrapper.addEventListener('wheel', (e) => {
-            // Si on est sur mobile (vertical naturel), ne pas intercepter
-            if (window.innerWidth <= 768) return;
-
-            // Sinon, permettre le scroll horizontal avec la molette
-            if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-                return; // Si déjà un scroll horizontal, laisser faire
-            }
-
-            e.preventDefault();
-            timelineWrapper.scrollLeft += e.deltaY;
-        }, { passive: false });
-    }
-
 });
