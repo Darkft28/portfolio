@@ -26,7 +26,8 @@
       "Bash(cmd /c \"dir C:\\xampp\\htdocs\\portfolio\\services /S\")",
       "Bash(cmd /c:*)",
       "Bash(xcopy:*)",
-      "Bash(del C:xampphtdocsportfolioassetscssservices.css)"
+      "Bash(del C:xampphtdocsportfolioassetscssservices.css)",
+      "Bash(powershell -Command:*)"
     ],
     "deny": [],
     "ask": []
