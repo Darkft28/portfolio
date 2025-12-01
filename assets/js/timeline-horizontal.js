@@ -57,5 +57,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: false });
     }
 
-    console.log('🕒 Timeline horizontale initialisée - ' + timelineItems.length + ' événements');
 });

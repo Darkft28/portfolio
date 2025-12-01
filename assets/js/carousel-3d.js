@@ -57,9 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Configuration initiale
             this.updateCarousel(false);
 
-            // Debug: vérifier les indicateurs
-            console.log('📍 Indicators found:', this.indicators.length);
-
             // Événements des boutons
             this.setupControls();
 
@@ -78,8 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Click sur les cartes latérales pour naviguer
             this.setupCardClick();
-
-            console.log('🎴 Carousel 3D initialized with', this.totalCards, 'cards');
         }
 
         /**
@@ -175,15 +170,11 @@ document.addEventListener('DOMContentLoaded', function() {
          * Aller directement à une carte spécifique
          */
         goTo(index) {
-            console.log('🎯 GoTo called with index:', index, 'Current:', this.currentIndex);
-
             if (this.isTransitioning) {
-                console.log('⏸️ Transition in progress, skipping');
                 return;
             }
 
             if (index === this.currentIndex) {
-                console.log('ℹ️ Already at this index, skipping');
                 return;
             }
 
@@ -325,12 +316,10 @@ document.addEventListener('DOMContentLoaded', function() {
         setupHoverPause() {
             this.container.addEventListener('mouseenter', () => {
                 this.isHovered = true;
-                console.log('⏸️ Auto-play paused');
             });
 
             this.container.addEventListener('mouseleave', () => {
                 this.isHovered = false;
-                console.log('▶️ Auto-play resumed');
             });
         }
 
@@ -352,7 +341,6 @@ document.addEventListener('DOMContentLoaded', function() {
         destroy() {
             this.stopAutoPlay();
             // Retirer tous les event listeners si nécessaire
-            console.log('🗑️ Carousel destroyed');
         }
     }
 
@@ -369,11 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resizeTimer = setTimeout(() => {
             if (carousel) {
                 carousel.updateCarousel(false);
-                console.log('🔄 Carousel resized');
             }
         }, 250);
     });
-
-    // Message de démarrage
-    console.log('🎴 Carousel 3D script loaded');
 });

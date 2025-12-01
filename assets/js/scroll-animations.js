@@ -370,8 +370,6 @@ document.addEventListener('DOMContentLoaded', function() {
         initMagneticEffect();
         initFloatingParticles();
         initSmoothScroll();
-
-        console.log('✨ Scroll animations initialized');
     }
 
     // Démarrer après un court délai pour s'assurer que tout est chargé
