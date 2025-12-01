@@ -27,7 +27,12 @@
       "Bash(cmd /c:*)",
       "Bash(xcopy:*)",
       "Bash(del C:xampphtdocsportfolioassetscssservices.css)",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "WebFetch(domain:baptistenuytten.fr)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix: Correction du menu déroulant Portfolio sur mobile\n\nLe menu déroulant Portfolio restait ouvert après un tap sur mobile/tactile.\nAjout de JavaScript pour gérer correctement l''ouverture/fermeture du dropdown\net désactivation du :hover CSS sur mobile en faveur d''une classe .dropdown-open.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nSEO: Optimisation complète du référencement naturel\n\nOptimisations majeures pour améliorer le SEO et le référencement Google :\n\n**Meta Tags & Structured Data:**\n- Optimisation des titres SEO avec mots-clés stratégiques\n- Descriptions enrichies et orientées conversion (160 caractères max)\n- Meta robots avancés (max-snippet, max-image-preview)\n- Ajout de tags géographiques (France, Normandie)\n- Structured Data JSON-LD : ProfessionalService, Person, Breadcrumb\n- Amélioration Open Graph et Twitter Cards (dimensions images)\n\n**Sitemap.xml:**\n- Ajout de toutes les pages du portfolio et projets\n- Priorisation des URLs (homepage 1.0, portfolio 0.9, projets 0.7)\n- Fréquence de mise à jour optimisée\n\n**SEO On-Page:**\n- Balises alt descriptives pour toutes les images projets\n- Attributs aria-label pour l''accessibilité\n- Structure hiérarchique des headings (H1, H2, H3)\n- Liens internes optimisés\n\n**Résultats attendus:**\n✅ Meilleur positionnement sur \"développeur web freelance\"\n✅ Rich Snippets Google (prix, avis, breadcrumb)\n✅ Meilleure indexation par les moteurs de recherche\n✅ Amélioration du CTR dans les résultats Google\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
