@@ -534,6 +534,45 @@
                 });
             }
 
+            // Gestion du menu déroulant Portfolio sur mobile
+            const dropdown = document.querySelector('.nav-links .dropdown');
+            const dropdownMenu = document.querySelector('.nav-links .dropdown-menu');
+
+            if (dropdown && dropdownMenu) {
+                // Sur mobile/tactile, gérer l'ouverture/fermeture du dropdown
+                dropdown.addEventListener('click', function(e) {
+                    // Uniquement sur mobile (quand le menu hamburger est visible)
+                    if (window.innerWidth <= 767) {
+                        // Si on clique sur le lien principal du dropdown
+                        const dropdownLink = dropdown.querySelector('a');
+                        if (e.target === dropdownLink || dropdownLink.contains(e.target)) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('dropdown-open');
+                        }
+                    }
+                });
+
+                // Fermer le dropdown quand on clique sur un lien du sous-menu
+                dropdownMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        dropdown.classList.remove('dropdown-open');
+                        if (navLinks) {
+                            navLinks.classList.remove('active');
+                        }
+                        if (hamburger) {
+                            hamburger.classList.remove('active');
+                        }
+                    });
+                });
+
+                // Fermer le dropdown quand on clique ailleurs
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('dropdown-open');
+                    }
+                });
+            }
+
             // Theme Toggle
             const themeToggle = document.getElementById('themeToggle');
             const htmlElement = document.documentElement;
