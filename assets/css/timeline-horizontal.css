@@ -1,74 +1,52 @@
 /* ===================================================================
-   TIMELINE HORIZONTALE ULTRA-MODERNE
+   TIMELINE VERTICALE SIMPLE ET MODERNE
+   Inspiré des meilleures pratiques 2025
    ================================================================= */
 
-/* Wrapper de la timeline horizontale */
+/* Wrapper de la timeline */
 .timeline-horizontal-wrapper {
     position: relative;
     width: 100%;
-    padding: var(--spacing-20) 0;
-    overflow: hidden;
-    scroll-behavior: smooth;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-16) var(--spacing-8);
 }
 
-/* Masquer complètement la scrollbar */
-.timeline-horizontal-wrapper::-webkit-scrollbar {
-    display: none;
-}
-
-.timeline-horizontal-wrapper {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE et Edge */
-}
-
-/* Container de la timeline */
+/* Timeline container */
 .timeline-horizontal {
     position: relative;
-    display: flex;
-    align-items: center;
-    min-width: 100%;
-    padding: 0;
+    padding: var(--spacing-8) 0;
 }
 
-/* Ligne centrale horizontale avec gradient moderne */
+/* Ligne verticale centrale */
 .timeline-horizontal::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 4px;
+    width: 3px;
     background: var(--gradient-accent);
-    transform: translateY(-50%);
-    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
     border-radius: var(--radius-full);
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
 }
 
 /* Track contenant les éléments */
 .timeline-horizontal-track {
     display: flex;
-    justify-content: space-evenly;  /* Changé de space-between à space-evenly */
-    align-items: center;
-    width: 100%;
-    min-width: 100vw;  /* Ajouté pour forcer l'utilisation de toute la largeur */
+    flex-direction: column;
+    gap: var(--spacing-12);
     position: relative;
-    z-index: 2;
-    gap: var(--spacing-12);  /* Augmenté de 8 à 12 pour plus d'espace */
-    padding: 0 var(--spacing-20);  /* Augmenté le padding pour mieux utiliser l'espace */
 }
 
 /* Item de la timeline */
 .timeline-horizontal-item {
-    flex: 1;
-    min-width: 280px;
-    max-width: 340px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 50%;
+    padding: 0 var(--spacing-8);
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
     transition: all 0.6s var(--ease-custom);
 }
 
@@ -77,91 +55,140 @@
     transform: translateY(0);
 }
 
-/* Alternance haut/bas des items */
+/* Alternance gauche/droite */
 .timeline-horizontal-item:nth-child(odd) {
-    align-items: center;
-    margin-bottom: 150px;
+    left: 0;
+    padding-right: var(--spacing-8);
+    text-align: right;
 }
 
 .timeline-horizontal-item:nth-child(even) {
-    align-items: center;
-    margin-top: 150px;
+    left: 50%;
+    padding-left: var(--spacing-8);
+    text-align: left;
 }
 
-/* Icône de l'événement */
+/* Point sur la timeline (cercle) */
+.timeline-horizontal-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--color-bg-primary);
+    border: 3px solid var(--color-accent-start);
+    border-radius: 50%;
+    top: 0;
+    z-index: 2;
+    transition: all var(--transition-normal) var(--ease-custom);
+    box-shadow: 0 0 0 4px var(--color-bg-primary);
+}
+
+.timeline-horizontal-item:nth-child(odd)::before {
+    right: -10px;
+}
+
+.timeline-horizontal-item:nth-child(even)::before {
+    left: -10px;
+}
+
+.timeline-horizontal-item:hover::before {
+    background: var(--gradient-accent);
+    border-color: var(--color-accent-end);
+    transform: scale(1.3);
+    box-shadow: 0 0 0 6px var(--color-bg-primary), 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Flèche pointant vers le centre */
+.timeline-horizontal-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 8px;
+    border: 8px solid transparent;
+    z-index: 1;
+}
+
+.timeline-horizontal-item:nth-child(odd)::after {
+    right: var(--spacing-8);
+    border-left-color: var(--color-border);
+}
+
+.timeline-horizontal-item:nth-child(even)::after {
+    left: var(--spacing-8);
+    border-right-color: var(--color-border);
+}
+
+/* Icône cachée (non utilisée dans ce design simple) */
 .timeline-icon {
     display: none;
 }
 
-/* Card de contenu ultra-moderne */
+/* Card de contenu */
 .timeline-horizontal-content {
     background: var(--color-bg-primary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-2xl);
-    padding: var(--spacing-8);
-    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal) var(--ease-custom);
-    min-height: 280px;
-    width: 100%;
-    text-align: center;
     position: relative;
-    overflow: hidden;
 }
 
-/* Effet gradient au hover */
+.timeline-horizontal-item:hover .timeline-horizontal-content {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent-start);
+    transform: translateY(-4px);
+}
+
+/* Ligne colorée en haut de la carte */
 .timeline-horizontal-content::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: var(--gradient-accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--transition-normal) var(--ease-custom);
-}
-
-.timeline-horizontal-item:hover .timeline-horizontal-content {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--color-accent-start);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
 }
 
 .timeline-horizontal-item:hover .timeline-horizontal-content::before {
-    transform: scaleX(1);
+    opacity: 1;
 }
 
-/* Badge date moderne */
+/* Badge date */
 .timeline-horizontal-date {
     display: inline-block;
     background: var(--gradient-accent);
     color: white;
-    padding: var(--spacing-2) var(--spacing-5);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--spacing-4);
-    white-space: nowrap;
-    box-shadow: var(--shadow-accent);
-}
-
-/* Titre de l'événement */
-.timeline-horizontal-content h3 {
-    color: var(--color-text-primary);
-    font-size: var(--font-size-xl);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-3);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+/* Titre */
+.timeline-horizontal-content h3 {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-2);
     letter-spacing: -0.01em;
 }
 
 /* Lieu/Entreprise */
 .timeline-horizontal-location {
-    color: var(--color-text-secondary);
+    color: var(--color-accent-start);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--spacing-4);
-    font-style: italic;
+    margin-bottom: var(--spacing-3);
+    font-style: normal;
 }
 
 /* Description */
@@ -173,108 +200,69 @@
 }
 
 /* ===================================================================
-   RESPONSIVE TIMELINE HORIZONTALE
+   RESPONSIVE TIMELINE VERTICALE
    ================================================================= */
 
+/* Tablette */
 @media (max-width: 991px) {
-    .timeline-horizontal-item {
-        min-width: 260px;
-        max-width: 300px;
+    .timeline-horizontal-wrapper {
+        max-width: 700px;
     }
 
     .timeline-horizontal-track {
-        gap: var(--spacing-6);
-        padding: 0 var(--spacing-6);
+        gap: var(--spacing-10);
     }
 
     .timeline-horizontal-content {
-        min-height: 240px;
-        padding: var(--spacing-6);
-    }
-
-    .timeline-icon {
-        width: 56px;
-        height: 56px;
-        font-size: 1.5rem;
+        padding: var(--spacing-5);
     }
 }
 
-@media (max-width: 767px) {
-    /* Sur mobile, on passe en layout vertical */
+/* Mobile - passage en colonne simple */
+@media (max-width: 768px) {
     .timeline-horizontal-wrapper {
-        padding: var(--spacing-16) 0;
-        overflow-x: visible;
+        padding: var(--spacing-12) var(--spacing-6);
     }
 
-    .timeline-horizontal {
-        padding: 0 var(--spacing-6);
-    }
-
+    /* Ligne à gauche au lieu du centre */
     .timeline-horizontal::before {
-        top: 0;
-        bottom: 0;
-        left: var(--spacing-8);
-        right: auto;
-        width: 3px;
-        height: auto;
-        transform: none;
+        left: 25px;
+        margin-left: 0;
     }
 
     .timeline-horizontal-track {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-12);
-        padding-left: calc(var(--spacing-12));
+        gap: var(--spacing-8);
     }
 
+    /* Tous les items à droite de la ligne */
     .timeline-horizontal-item {
         width: 100%;
-        max-width: 100%;
-        margin: 0 !important;
+        left: 0 !important;
+        padding-left: var(--spacing-16);
+        padding-right: 0;
+        text-align: left !important;
     }
 
     .timeline-horizontal-item:nth-child(odd),
     .timeline-horizontal-item:nth-child(even) {
-        margin: 0 !important;
+        left: 0 !important;
+        padding-left: var(--spacing-16);
+        padding-right: 0;
+        text-align: left !important;
     }
 
-    .timeline-icon {
-        margin-bottom: var(--spacing-4);
+    /* Point toujours à gauche */
+    .timeline-horizontal-item::before {
+        left: 15px !important;
+        right: auto !important;
     }
 
-    .timeline-horizontal-item:hover .timeline-icon {
-        transform: scale(1.15) rotate(5deg);
-    }
-
-    .timeline-horizontal-content {
-        max-width: 100%;
-        text-align: left;
-        padding: var(--spacing-6);
-        min-height: auto;
-    }
-
-    .timeline-horizontal-content::before {
-        left: 0;
-        width: 4px;
-        height: 100%;
-        transform: scaleY(0);
-        transform-origin: top;
-    }
-
-    .timeline-horizontal-item:hover .timeline-horizontal-content::before {
-        transform: scaleY(1);
-    }
-}
-
-@media (max-width: 575px) {
-    .timeline-horizontal-item {
-        min-width: 100%;
-    }
-
-    .timeline-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 1.25rem;
+    /* Flèche toujours pointant vers la gauche */
+    .timeline-horizontal-item::after {
+        left: var(--spacing-8) !important;
+        right: auto !important;
+        border-right-color: var(--color-border) !important;
+        border-left-color: transparent !important;
     }
 
     .timeline-horizontal-content {
@@ -282,6 +270,43 @@
     }
 
     .timeline-horizontal-content h3 {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-base);
+    }
+
+    .timeline-horizontal-date {
+        font-size: 0.7rem;
+        padding: var(--spacing-1) var(--spacing-3);
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 575px) {
+    .timeline-horizontal-wrapper {
+        padding: var(--spacing-10) var(--spacing-4);
+    }
+
+    .timeline-horizontal-item {
+        padding-left: var(--spacing-12);
+    }
+
+    .timeline-horizontal-item:nth-child(odd),
+    .timeline-horizontal-item:nth-child(even) {
+        padding-left: var(--spacing-12);
+    }
+
+    .timeline-horizontal-content {
+        padding: var(--spacing-4);
+    }
+
+    .timeline-horizontal-content h3 {
+        font-size: var(--font-size-sm);
+    }
+
+    .timeline-horizontal-location {
+        font-size: var(--font-size-xs);
+    }
+
+    .timeline-horizontal-content > p:last-child {
+        font-size: var(--font-size-xs);
     }
 }
